@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width" />
+<meta charset="utf-8">
 <title>Will Rust - Resume</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery-git.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
@@ -10,664 +9,577 @@
 <script type='text/javascript'>//<![CDATA[
 $(window).on('load', function() {
 var $window = $(window),
-    $profile = $('#profile'),
-    $hello = $('#hello'),
+    $back = $('#back'),
+    $front = $('#front'),
     rotation = 0,
     transX = 0,
     transY = 0;
-
+	
 $window.on('mousemove', function(event){    
     rotation = (event.pageX/$window.width()*5);
-    transX = (event.pageX/$window.width()*100);
+    transX = (event.pageX/$window.width()*120);
     transY = (event.pageY/$window.height()*50);
-    $profile.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
+    $front.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
 });
 
 $window.on('mousemove', function(event){    
     rotation = (event.pageX/$window.width()*5);
-    transX = (event.pageX/$window.width()*-100);
+    transX = (event.pageX/$window.width()*120);
     transY = (event.pageY/$window.height()*-50);
-    $hello.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
+    $back.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
 });
 });//]]> 
 
 </script>
-<script type='text/javascript'>
-$(function() {
-
-  var $window           = $(window),
-      win_height_padded = $window.height() * 1.1,
-      isTouch           = Modernizr.touch;
-
-  if (isTouch) { $('.revealOnScroll').addClass('animated'); }
-
-  $window.on('scroll', revealOnScroll);
-
-  function revealOnScroll() {
-    var scrolled = $window.scrollTop(),
-        win_height_padded = $window.height() * 1.1;
-
-    // Showed...
-    $(".revealOnScroll:not(.animated)").each(function () {
-      var $this     = $(this),
-          offsetTop = $this.offset().top;
-
-      if (scrolled + win_height_padded > offsetTop) {
-        if ($this.data('timeout')) {
-          window.setTimeout(function(){
-            $this.addClass('animated ' + $this.data('animation'));
-          }, parseInt($this.data('timeout'),10));
-        } else {
-          $this.addClass('animated ' + $this.data('animation'));
-        }
-      }
-    });
-    // Hidden...
-   $(".revealOnScroll.animated").each(function (index) {
-      var $this     = $(this),
-          offsetTop = $this.offset().top;
-      if (scrolled + win_height_padded < offsetTop) {
-        $(this).removeClass('animated fadeInUp flipInX lightSpeedIn')
-      }
-    });
-  }
-
-  revealOnScroll();
-});
-</script>
-<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Martel:400,300,200,600' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i|Oswald:300,400,700" rel="stylesheet">
 <style>
-
-html{ width: 100%; minwidth:100%;}
-body{ width: 100%; minwidth:100%;}
-
-h1{
-    font-family: 'Martel', sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 25px;
-    color: #a3a3a3;
-    font-style: italic;
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i|Oswald:300,400,700');
+	
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	min-height: 100%;
+	background: #1f2125 !important;
+}
+	
+.sitewidth{
+	width: 100%;
+	max-width: 1200px !important; /* should match .header max width */
+	margin: 0px auto 100px auto !important;
+	height: auto !important;
+	min-height: 100% !important;
+	background: #21252e !important;
+	z-index: -100!important;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 40px 80px -20px rgba(0,0,0,0.9);
+	-moz-box-shadow: 0px 40px 80px -20px rgba(0,0,0,0.9);
+	box-shadow: 0px 40px 80px -20px rgba(0,0,0,0.9);
+}
+	
+p {
+	font-family: 'Crimson Text', serif;
+	margin:0px;
+	padding:0px;
+	font-size:14px;
+	line-height:18px;
+	font-weight: 500;
+	color: #FFFFFF;
+	-webkit-font-smoothing: antialiased;
 }
 
-h1 span{
-    font-size: 50px;
-    line-height: 55px;
+h1 {
+	font-family: 'Playfair Display', sans-serif;
+	margin:0px;
+	padding:0px;
+	font-size:48px;
+	line-height:54px;
+	color: #fa6465;
+	text-align:center;
+	-webkit-font-smoothing: antialiased;
 }
 
-h1 .slash{
-    font-size: 40px;
-    line-height: 55px;
+h2 {
+	font-family: 'Playfair Display', sans-serif;
+	margin:0px;
+	padding:0px;
+	font-size:36px;
+	line-height:40px;
+	color: #fa6465;
+	text-align:center;
+	-webkit-font-smoothing: antialiased;
 }
 
-h2{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 22px;
-    color: #777777;
+h3 {
+	font-family: 'Playfair Display', sans-serif;
+	margin:30px 0px 10px 0px;
+	padding:0px;
+	font-size:24px;
+	line-height:30px;
+	color: #fa6465;
+	text-align:center;
+	-webkit-font-smoothing: antialiased;
 }
 
-p{
-    font-family: 'Martel', sans-serif;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 16px;
-    color: #a3a3a3;
-    font-style: italic;
-}
-
- .animated{
-  animation: animateonscroll ease 2s;
-  animation-iteration-count: 1;
-  transform-origin: 50% 50%;
-  animation-fill-mode:forwards; /*when the spec is finished*/
-  -webkit-animation: animateonscroll ease 2s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-transform-origin: 50% 50%;
-  -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
-  -moz-animation: animateonscroll ease 2s;
-  -moz-animation-iteration-count: 1;
-  -moz-transform-origin: 50% 50%;
-  -moz-animation-fill-mode:forwards; /*FF 5+*/
-  -o-animation: animateonscroll ease 2s;
-  -o-animation-iteration-count: 1;
-  -o-transform-origin: 50% 50%;
-  -o-animation-fill-mode:forwards; /*Not implemented yet*/
-  -ms-animation: animateonscroll ease 2s;
-  -ms-animation-iteration-count: 1;
-  -ms-transform-origin: 50% 50%;
-  -ms-animation-fill-mode:forwards; /*IE 10+*/
-}
-
-
-.experience li{
-    color: #bbbbbb;
-}
+/******************************************************/
+/************************HEADER************************/
+/******************************************************/
 
 .header{
     width: 100%;
-    height: 105px;
+	max-width: 1200px; /* must match site width */
+    height: auto;
     position:fixed;
-    z-index: 1000;
+    z-index: 1000000000;
+	top: 0px;
+	overflow:hidden;
 }
 
 .header_logo{
     float: left;
     max-width: 105px;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 0px 0px 20px;
 }
 
 .header_spacer{
     height: 100px;
 }
-/*-------------NAV-----------------*/
-nav a
-{
-  text-decoration: none;
-  color: #bbbbbb;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  letter-spacing: 1px;
-  
-  transition: color 0.3s ease;
+	
+	
+/********************NAVIGATION*******************/
+
+.navigation{
+	width:100%;
+	height: auto;
+	text-align: center;
 }
 
-nav a:hover{
-  color: #000000;
+	.navigation-content {
+	font-family: sans-serif;
+	width: 60%;
+	margin-left: 40%;
+	height: auto;
+	background-color: rgba(31,33,37,.95);
+	padding: 100px 0px 1500px 0px;
+	box-sizing: border-box;
+	text-align:left;
 }
+.navigation-input {
+    display: none;
+} /*Hide input element*/
 
-#menuToggle
-{
-  display: block;
-  position: relative;
-  float: right;
-  top: 20px;
-  left: -30px;
-  
-  z-index: 1;
-  
-  -webkit-user-select: none;
-  user-select: none;
+.navigation-content {
+	transition: .5s cubic-bezier(.5,0,.5,1);
 }
-
-#menuToggle input
-{
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  
-  cursor: pointer;
-  
-  opacity: 0; 
-  z-index: 2; 
-  
-  -webkit-touch-callout: none;
+.navigation-input:not(checked) ~ .navigation-content {
+	transform:  translate(100%,0px);
+	height: 110px;
+	padding: 0px 0px 0px 0px;
 }
-
-
-#menuToggle span
-{
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  
-  background: #000000;
-  border-radius: 3px;
-  
-  z-index: 1;
-  
-  transform-origin: 4px 0px;
-  
+.navigation-input:checked ~ .navigation-content {       
+	transform:  translate(0px,0px);
+	height: auto;
+	padding: 0px 0px 4000px 0px;
+}
+.navigation-label {
+	display: block;
+	position: absolute;
+	padding:0px;
+	top: 40px;
+	right: 40px;
+	color: #FFFFFF;
+	text-decoration: none;
+	text-align: center;
+	transition: .5s cubic-bezier(.5,0,.5,1);
+	z-index:1000000000;
+}
+	
+.navigation span{
+	display: block;
+	background: #fa6465;
+	width: 33px;
+  height: 3px;
+	margin-bottom: 5px;
+	border-radius: 1px;
+	 transform-origin: 63% 50%;
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               opacity 0.55s ease;
 }
 
-#menuToggle span:first-child
-{
-  transform-origin: 0% 0%;
+.navigation-label:hover {
+	opacity: .5;
 }
+	
 
-#menuToggle span:nth-last-child(2)
-{
-  transform-origin: 0% 100%;
-}
 
-#menuToggle input:checked ~ span
+.navigation-input:checked + .navigation-label span
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #000000;
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3)
+.navigation-input:checked + .navigation-label span:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2)
+.navigation-input:checked + .navigation-label span:nth-last-child(2)
 {
   opacity: 1;
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-#menu
-{
-  position: absolute;
-  opacity:0;
-  width: 500px;
-  margin: -100px 0 0 -500px;
-  padding: 50px;
-  padding-top: 125px;
-  padding-bottom: 1500px;
-  background: rgba(255,255,255,0.9);
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  
-  transform-origin: 0% 0%;
-  transform: translate(100%, 0);
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+
+
+	
+.navigation a {
+	font-family: 'Playfair Display', sans-serif;
+	margin:0px;
+	padding:0px;
+	font-size:36px;
+	line-height:80px;
+	color: #fa6465;
+	font-weight: 700;
+	text-decoration: none;
+	text-align:left;
+	-webkit-font-smoothing: antialiased;
+	display: block;
+	transition: .3s ease-in-out;
+	padding: 0px 0px 0px 80px;
+}
+	
+.navigation a:hover {
+	opacity: .5;
 }
 
-#menu li
-{
-  padding: 10px 0;
-  font-size: 22px;
+
+/********************************************************/
+/*************************Hero***************************/
+/********************************************************/
+
+.banner-wrapper{
+	width: 100%;
+	position: relative;
 }
 
-#menuToggle input:checked ~ ul
-{
-  transform: scale(1.0, 1.0);
-  opacity: 1;
+.mobilebanner{
+	display:none;
 }
 
-/*-------------BANNER-----------------*/
-.banner{
-    width: 100%;
-    height: auto;
-    position: relative;
-    margin-bottom: 300px;
-}
-.banner_mobilespacer{
-    display: none;
+.clouds-mid{
+	position: absolute;
+	top: 0px;
 }
 
-.banner_hello{
-    width: 100%
+.clouds-front{
+	position:absolute;
+	top: 0px;
 }
 
-.fadeindown2{
-    position: absolute;
-    left: 50%;
-    margin-left: -35%;
-    top: 30%;
-    width:80%;
-  animation: fadeindowndelay ease 2s;
-  animation-iteration-count: 1;
-  transform-origin: 50% 50%;
-  animation-fill-mode:forwards; /*when the spec is finished*/
-  -webkit-animation: fadeindowndelay ease 2s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-transform-origin: 50% 50%;
-  -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
-  -moz-animation: fadeindowndelay ease 2s;
-  -moz-animation-iteration-count: 1;
-  -moz-transform-origin: 50% 50%;
-  -moz-animation-fill-mode:forwards; /*FF 5+*/
-  -o-animation: fadeindowndelay ease 2s;
-  -o-animation-iteration-count: 1;
-  -o-transform-origin: 50% 50%;
-  -o-animation-fill-mode:forwards; /*Not implemented yet*/
-  -ms-animation: fadeindowndelay ease 2s;
-  -ms-animation-iteration-count: 1;
-  -ms-transform-origin: 50% 50%;
-  -ms-animation-fill-mode:forwards; /*IE 10+*/
+.banner .text {
+	position: absolute;
+	width: 100%;
+	top: 15%;
+	right: 5%;
+	font-family: 'Oswald', sans-serif;
+	font-size:22vw;
+	font-size: 300px;
+	line-height:300px;
+	color: #FFFFFF;
+	font-weight: 500;
+	opacity: .65;
+	text-align:center;
+	-webkit-font-smoothing: antialiased;
 }
 
-.banner_profile{
-    width: 100%;
-}
- .fadeindown1{
-    position: absolute;
-    left: 50%;
-    top: 0px;
-    width: 30%;
-  animation: fadeindown ease 1.5s;
-  animation-iteration-count: 1;
-  transform-origin: 50% 50%;
-  animation-fill-mode:forwards; /*when the spec is finished*/
-  -webkit-animation: fadeindown ease 1.5s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-transform-origin: 50% 50%;
-  -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
-  -moz-animation: fadeindown ease 1.5s;
-  -moz-animation-iteration-count: 1;
-  -moz-transform-origin: 50% 50%;
-  -moz-animation-fill-mode:forwards; /*FF 5+*/
-  -o-animation: fadeindown ease 1.5s;
-  -o-animation-iteration-count: 1;
-  -o-transform-origin: 50% 50%;
-  -o-animation-fill-mode:forwards; /*Not implemented yet*/
-  -ms-animation: fadeindown ease 1.5s;
-  -ms-animation-iteration-count: 1;
-  -ms-transform-origin: 50% 50%;
-  -ms-animation-fill-mode:forwards; /*IE 10+*/
+.banner .text span{
+	opacity: 0;
 }
 
-.banner_about{
-    position: absolute;
-    left: 20%;
-    bottom: 10%;
-    width: 225px;
-    height: auto;
-  animation: fadeindowndelay ease 3s;
-  animation-iteration-count: 1;
-  transform-origin: 50% 50%;
-  animation-fill-mode:forwards; /*when the spec is finished*/
-  -webkit-animation: fadeindowndelay ease 3s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-transform-origin: 50% 50%;
-  -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
-  -moz-animation: fadeindowndelay ease 3s;
-  -moz-animation-iteration-count: 1;
-  -moz-transform-origin: 50% 50%;
-  -moz-animation-fill-mode:forwards; /*FF 5+*/
-  -o-animation: fadeindowndelay ease 3s;
-  -o-animation-iteration-count: 1;
-  -o-transform-origin: 50% 50%;
-  -o-animation-fill-mode:forwards; /*Not implemented yet*/
-  -ms-animation: fadeindowndelay ease 3s;
-  -ms-animation-iteration-count: 1;
-  -ms-transform-origin: 50% 50%;
-  -ms-animation-fill-mode:forwards; /*IE 10+*/
+#front.#back{
+	opacity: .65;
 }
-/*-------------EXPERIENCE-----------------*/
+
+.shaka{
+	position:absolute;
+	bottom: -100px;
+	left: 50%;
+	margin-left: -39px;
+}
+
+
+
+	
+/*****************************************************/
+/************************ABOUT************************/
+/*****************************************************/
+
+	
+.about-wrapper{
+	max-width: 650px;
+	clear: both;
+	position: static;
+	margin: 200px auto 100px auto;
+	padding: 0px 40px 0px 40px;
+	text-align: center;
+}	
+
+.about-wrapper p{
+	margin: 40px 0px 0px 0px;
+}
+
+.about-wrapper a {
+	color: #fa6465;
+	text-decoration: none;
+}
+
+.about-wrapper a:hover {
+	text-decoration: underline;
+}
+
+.about-wrapper span {
+	font-size:12px;
+	line-height:15px;
+	font-style:italic;
+}
+
+/********************************************************/
+/***********************EXPERIENCE***********************/
+/********************************************************/
 
 .experience{
-    background-color: #eff1f3;
-    width: 100%;
--webkit-transform: skewY(-4deg);
--moz-transform: skewY(-4deg);
--ms-transform: skewY(-4deg);
--o-transform: skewY(-4deg);
-transform: skewY(-4deg);
-background-image: url(https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd5e707eb4e24ed39a3/1463614429857/experience_bgimage.png?format=2500w);
-background-position: bottom;
-background-repeat: no-repeat;
-background-size: 100% auto;
+	clear: both;
+	position: static;
+}
+
+.experience h1{
+	margin: 0px 0px 30px 0px
 }
 
 
-.experience_wrapper{
--webkit-transform: skewY(4deg);
--moz-transform: skewY(4deg);
--ms-transform: skewY(4deg);
--o-transform: skewY(4deg);
-transform: skewY(4deg);
-padding: 250px 80px 500px 80px
+	
+.experience-wrapper{
+	width: 70%;
+	float: left;
+	position: relative;
+	margin: 250px 0px 250px 0px;
+}	
+		
+.experience-container{
+	width: 100%;
+	height: auto;
+	padding: 0px;
+	background-image: url(https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882973a1e5b6c186545b31d/1484953407829/BoxGradient.png);
+	background-size: 100% 100%;
+	-webkit-box-shadow: 30px 30px 60px -20px rgba(0,0,0,0.9);
+	-moz-box-shadow: 30px 30px 60px -20px rgba(0,0,0,0.9);
+	box-shadow: 30px 30px 60px -20px rgba(0,0,0,0.9);
+	position:relative;
+	z-index: 1000;
+}	
+	
+.experience-line{
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	position: absolute;
+	border: 3px solid #f35d5e;
+	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(243,93,94,1), 0px 0px 10px 0px rgba(243,93,94,1);
+	-moz-box-shadow: inset 0px 0px 10px 0px rgba(243,93,94,1), 0px 0px 10px 0px rgba(243,93,94,1);
+	box-shadow: inset 0px 0px 10px 0px rgba(243,93,94,1), 0px 0px 10px 0px rgba(243,93,94,1);
+	top: 40px;
+	left: 40px;
+	z-index: 1;
+}
+	
+	.experience-text{
+	padding: 80px;
 }
 
 
-
-
-#experience-slideshow-wrap {
-    display: block;
-    width: 100%;
-    max-width: 1400px;
-    /*height: 550px;
-    min-width: 635px;
-    max-width: 800px;*/
-    /*height: 800px;
-    width: 1200px;*/
-    margin-top: 20px;
-    position: relative;
-
-}
-
-#experience-slideshow-inner {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-#experience-slideshow-inner>ul {
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-    height: 100%;
-    width: 400%;
-    overflow: hidden;
-    position: relative;
-    left: 0px;
-    -webkit-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
-    -moz-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
-    -o-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
-    transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-#experience-slideshow-inner>ul>li {
-    width: 25%;
-    float: left;
-    position: relative;
-}
-
-#experience-slideshow-inner>ul>li>img {
-    margin: auto;
-    height: 100%;
-}
-
-#experience-slideshow-wrap input[type=radio] {
-    position: absolute;
-    left: 50%;
-    bottom: 15px;
-    z-index: 100;
-    visibility: hidden;
-}
-
-#experience-slideshow-wrap label:not(.experience-arrows):not(.experience-show-description-label) {
-    position: absolute;
-    left: 50%;
-    /*bottom: -45px;*/
-    bottom: -40px;
-    z-index: 100;
-    width: 12px;
-    height: 12px;
-    /*background-color: #fff;*/
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    cursor: pointer;
-    border:1px solid #ccc;
-
-}
-
-#experience-slideshow-wrap label:not(.experience-arrows):active { bottom: -41px }
-
-#experience-slideshow-wrap input[type=radio]#experience-button-1:checked~label[for=experience-button-1] { background-color: #ccc;}
-
-#experience-slideshow-wrap input[type=radio]#experience-button-2:checked~label[for=experience-button-2] { background-color: #ccc;}
-
-#experience-slideshow-wrap input[type=radio]#experience-button-3:checked~label[for=experience-button-3] { background-color: #ccc;}
-
-#experience-slideshow-wrap input[type=radio]#experience-button-4:checked~label[for=experience-button-4] { background-color: #ccc;}
-
-#experience-slideshow-wrap label[for=experience-button-1] { margin-left: -36px }
-
-#experience-slideshow-wrap label[for=experience-button-2] { margin-left: -18px }
-
-#experience-slideshow-wrap label[for=experience-button-3] { margin-left: -0px }
-
-#experience-slideshow-wrap label[for=experience-button-4] { margin-left: 18px }
-
-#experience-slideshow-wrap input[type=radio]#experience-button-1:checked~#experience-slideshow-inner>ul { left: 0 }
-
-#experience-slideshow-wrap input[type=radio]#experience-button-2:checked~#experience-slideshow-inner>ul { left: -100% }
-
-#experience-slideshow-wrap input[type=radio]#experience-button-3:checked~#experience-slideshow-inner>ul { left: -200% }
-
-#experience-slideshow-wrap input[type=radio]#experience-button-4:checked~#experience-slideshow-inner>ul { left: -300% }
-
-label.experience-arrows {
-    font-family: 'WebSymbolsRegular';
-    font-weight: bold;
-    font-size: 40px;
-    color: #bbb;
-    position: absolute;
-    top: 50%;
-    margin-top: -25px;
-    display: none;
-    opacity: 1;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-label.experience-arrows:hover { opacity: .5 }
-
-label.experience-arrows:active { margin-top: -23px }
-
-    input[type=radio]#experience-button-1:checked~.experience-arrows#experience-arrow-2, input[type=radio]#experience-button-2:checked~.experience-arrows#experience-arrow-3, input[type=radio]#experience-button-3:checked~.experience-arrows#experience-arrow-4,input[type=radio]#experience-button-4:checked~.experience-arrows#experience-arrow-1 {
-    right: -55px;
-    display: block;
-    }
-
-    input[type=radio]#experience-button-2:checked~.experience-arrows#experience-arrow-1, input[type=radio]#experience-button-3:checked~.experience-arrows#experience-arrow-2, input[type=radio]#experience-button-4:checked~.experience-arrows#experience-arrow-3, input[type=radio]#experience-button-1:checked~.experience-arrows#experience-arrow-4 {
-    left: -55px;
-    display: block;
-    -webkit-transform: scaleX(-1);
-    -moz-transform: scaleX(-1);
-    -ms-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    transform: scaleX(-1);
-    }
-
-input[type=radio]#experience-button-2:checked~.experience-arrows#experience-arrow-1 { left: -19px }
-
-input[type=radio]#experience-button-3:checked~.experience-arrows#experience-arrow-2 { left: -37px }
-
-input[type=radio]#experience-button-4:checked~.experience-arrows#experience-arrow-3 { left: -55px }
-
-#experience-slideshow-inner>ul>li:hover .description label { opacity: 1 }
-
-
-/*---Slides---*/
-
-.experience-slide-content{
-
-}
-
-.experience-slide-content table{
-  padding:20px;
-  margin: auto;
-  width:100%;
-}
-
-.experience-slide-content td{
+	.hideshow{
+		width: 100%;
+	}
+	
+.hideshow { width: 100%; overflow: hidden; margin: auto; margin-top: 0px; }
+.hideshow-content .slide { width: 25%; height: auto; float: left; opacity: 0;transition: 1.5s ease-in-out;}
+.hideshow-content { 
+  position: relative;
+  width: 400%;
+  margin: 10px 0px 0px 0px;
+  left: 0;
   text-align: left;
-  padding: 0;
-  margin: 0;
-
+  font-size: 0;
+  animation: 10s slide-motion infinite; 
+	transition: 1s ease-in-out;
+}
+	
+.hideshow input[type="radio"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+	
+.hideshow-content .slide {
+	font-family: 'Crimson Text', serif;
+	margin: 20px 0px 0px 0px;
+	font-size:18px;
+	line-height:18px;
+	font-weight: 500;
+	color: #FFFFFF;
+	-webkit-font-smoothing: antialiased;
+	}
+	
+.hideshow-content .slide span{
+	font-family: 'Crimson Text', serif;
+	margin:0px;
+	padding:0px;
+	font-size:14px;
+	line-height:18px;
+	font-weight: 500;
+	color: #FFFFFF;
+	-webkit-font-smoothing: antialiased;
 }
 
-.experience-slide-content p{
-  text-align: left;
-  margin: 0px;
-  padding: 0px;
+	.content1{
+		
+	}
+	.content2{
+		
+	}
+	.content3{
+		
+	}
+	.content4{
+		
+	}
 
+	.hideshow label div{
+		display: inline-block;
+		width: 24%;
+		text-align: center;
+		opacity: .4;
+		transition: .3s ease-in-out;
+	}
+	.hideshow label div:hover{
+		opacity: 1;
+	}
+
+#slide1:checked ~ .hideshow-content {       
+	left: 0%;
+}
+#slide1:checked ~ .hideshow-content .content1{       
+	opacity: 1;
+}
+#slide1:checked ~ label .label1 {       
+	opacity:1;
+}
+#slide2:checked ~ .hideshow-content {       
+	left: -100%;
+}
+#slide2:checked ~ .hideshow-content .content2{       
+	opacity: 1;
+}
+#slide2:checked ~ label .label2 {       
+	opacity:1;
+}
+#slide3:checked ~ .hideshow-content {       
+	left: -200%;
+}
+#slide3:checked ~ .hideshow-content .content3{       
+	opacity: 1;
+}
+	#slide3:checked ~ label .label3 {       
+	opacity:1;
+}
+#slide4:checked ~ .hideshow-content {       
+	left: -300%;
+}
+#slide4:checked ~ .hideshow-content .content4{       
+	opacity: 1;
+}
+	#slide4:checked ~ label .label4 {       
+	opacity:1;
 }
 
-.experience-slide-content td img{
-  height: 30px;
-  /*display:block;
-  margin: auto;*/
+
+.hideshow label .label1{       
+	width: 24%
+}
+.hideshow label .label2{       
+	width: 25%
+}
+.hideshow label .label3{       
+	width: 33%
+}
+.hideshow label .label4{       
+	width: 12%
 }
 
-.experience-slide-content td h1{
-  text-align: left;
-  padding: 0px;
-  margin: 0px;
-}
-.experience-slide-content td h2{
-  text-align: left;
-  padding: 0px;
-  margin: 0px;
-}
-
-.experience-slide-content ul{
-list-style-type: disc;
-}
-
-.experience-slide-content td a.moreinfo{
-  text-align: center;
-  background-color: #68dcba;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #fff;
-  border-bottom: 3px solid #41927a;
-  font-family: Lato, Open Sans, Roboto;
-  font-size: 14px;
-}
-
-.experience-slide-content td a.moreinfo:hover{
-  background-color: #16e9ab;
-  border-bottom: 3px solid #16e9ab;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
+.hideshow label img{       
+	height: 30px;
 }
 
 
-/*-------------PORTFOLIO-----------------*/
+
+
+.xxxxhideshow ul{
+	padding-left: 10px;
+}
+
+.hideshow li{
+	font-family: 'Crimson Text', serif;
+	margin:0px;
+	padding:0px;
+	font-size:14px;
+	line-height:18px;
+	font-weight: 500;
+	color: #FFFFFF;
+	-webkit-font-smoothing: antialiased;
+}
+
+.hideshow li a{
+	color: #fa6465;
+}
+	
+	
+/*******************************************************/
+/***********************PORTFOLIO***********************/
+/*******************************************************/
 
 .portfolio{
-    width: 100%;
-    height: auto;
--webkit-transform: skewY(-4deg);
--moz-transform: skewY(-4deg);
--ms-transform: skewY(-4deg);
--o-transform: skewY(-4deg);
-transform: skewY(-4deg);
+	clear: both;
+	position: static;
+}		
+	
+.portfolio-wrapper{
+	width: 70%;
+	float: right;
+	position: relative;
+	margin: 250px 0px 350px 0px;
+}	
+		
+.portfolio-container{
+	width: 100%;
+	height: auto;
+	padding: 0px;
+	background-image: url(https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882973a1e5b6c186545b31d/1484953407829/BoxGradient.png);
+	background-size: 100% 100%;
+	-webkit-box-shadow: 30px 30px 60px -20px rgba(0,0,0,0.9);
+	-moz-box-shadow: 30px 30px 60px -20px rgba(0,0,0,0.9);
+	box-shadow: 30px 30px 60px -20px rgba(0,0,0,0.9);
+	position:relative;
+	z-index: 1000;
+}	
+	
+.portfolio-line{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border: 3px solid #f35d5e;
+	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(243,93,94,1), 0px 0px 10px 0px rgba(243,93,94,1);
+	-moz-box-shadow: inset 0px 0px 10px 0px rgba(243,93,94,1), 0px 0px 10px 0px rgba(243,93,94,1);
+	box-shadow: inset 0px 0px 10px 0px rgba(243,93,94,1), 0px 0px 10px 0px rgba(243,93,94,1);
+	top: 40px;
+	right: 40px;
+	z-index: 1;
+}
+	
+	.portfolio-text{
+	padding: 80px;
+	text-align:center;
 }
 
-.portfolio_wrapper{
--webkit-transform: skewY(4deg);
--moz-transform: skewY(4deg);
--ms-transform: skewY(4deg);
--o-transform: skewY(4deg);
-transform: skewY(4deg);
-padding: 120px 80px 80px 80px
-
-}
-
-.portfolio_header{
-    width:100%;
-    text-align: right;
-}
 
 /*---Slider---*/
 
 #portfolio-slideshow-wrap {
     display: block;
     width: 100%;
-    /*height: 550px;
-    min-width: 635px;
-    max-width: 800px;*/
-    /*height: 800px;
-    width: 1200px;*/
+	margin: auto;
     margin-top: 80px;
     margin-bottom: 80px;
     position: relative;
@@ -763,18 +675,20 @@ box-shadow: 0px 30px 100px -30px rgba(0,0,0,0.4);
 label.portfolio-arrows {
     font-family: 'WebSymbolsRegular';
     font-weight: bold;
-    font-size: 40px;
-    color: #bbb;
+    font-size: 50px;
+	width: 20px;
+    color: #fa6465;
     position: absolute;
     top: 50%;
     margin-top: -25px;
     display: none;
-    opacity: 1;
+    opacity: .5;
     cursor: pointer;
     z-index: 1000;
+	transition: .3s ease-in-out;
 }
 
-label.portfolio-arrows:hover { opacity: .5 }
+label.portfolio-arrows:hover { opacity: 1;}
 
 label.portfolio-arrows:active { margin-top: -23px }
 
@@ -806,6 +720,7 @@ input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3
 
 .portfolio-slide-content a:hover{
  opacity: .5;
+ transition: .5s ease-in-out;
 }
 
 .portfolio-slide-content table{
@@ -830,592 +745,828 @@ input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3
 list-style-type: disc;
 }
 
-.portfolio_cta{
-    padding: 60px 0px 100px 0px;
-    text-align: center;
-}
+/*---CTA---*/
+
 .cta_fullportfolio{
-    font-family: 'Montserrat', sans-serif;
-    font-size;24px;
-    color: #000000;
+    font-family: 'Playfair Display', sans-serif
+    font-size;18px;
+	font-weight: 700;
+    color: #fa6465;
     text-decoration:none;
-    border: 1px solid #000000;
-    padding: 20px 100px;
+    border: 1px solid #fa6465;
+	-webkit-box-shadow: inset 0px 0px 3px 0px rgba(243,93,94,1), 0px 0px 3px 0px rgba(243,93,94,1);
+	-moz-box-shadow: inset 0px 0px 3px 0px rgba(243,93,94,1), 0px 0px 3px 0px rgba(243,93,94,1);
+	box-shadow: inset 0px 0px 3px 0px rgba(243,93,94,1), 0px 0px 3px 0px rgba(243,93,94,1);
+	border-radius: 5px;
+    padding: 12px 40px;
     transition: .3s ease-in-out;
 }
 
 .cta_fullportfolio:hover{
     color: #FFFFFF;
-    background-color: #000000;
-    border: 1px solid #000000; 
+    background-color: #fa6465;
+    border: 1px solid #fa6465; 
+}
+	
+
+/*****************************************************/
+/***********************CLIENTS***********************/
+/*****************************************************/
+	
+.clients{
+	clear: both;
+	position: static;
+}		
+	
+.clients-wrapper{
+	width: 80%;
+	height: auto;
+	clear: both;
+	position: static;
+	margin: auto;
+}	
+		
+.clients-container{
+	width: 100%;
+	height: auto;
+	padding: 0px;
+}
+	
+.clients-text{
+	width: 100%;
+	height: auto;
+	padding: 0px 0px 0px 10%
+}
+	
+.clients-container h2{
+	margin: 0px 0px 80px 0px;
 }
 
-.portfolio_cta2{
-    padding: 0px 0px 100px 0px;
-    text-align: center;
-}
-.cta_codepen{
-    font-family: 'Montserrat', sans-serif;
-    font-size;24px;
-    color: #FFFFFF;
-    text-decoration:none;
-    background-color: #000000;
-    border: 1px solid #000000;
-    padding: 20px 100px;
-    transition: .3s ease-in-out;
+.clients-text p{
+	width:30%;
+	display: inline-block;
+	text-align:left;
 }
 
-.cta_codepen:hover{
-    color: #000000;
-    background-color: #FFFFFF;
-    border: 1px solid #000000; 
+.clients-text p span{
+	font-size:16px;
+	line-height:18px;
+	font-weight: 700;
+	color: #fa6465;
 }
 
-.portfolio_carousel{
-    background-image: url('https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd6e707eb4e24ed39da/1463614430152/clientsloop.png?format=2500w');
-    background-size: 3300px 100px;
-    height: 100px;
-    width: 100%;
-    margin: 80px 0px;
-    opacity: .3;
-  animation: clientloop linear 80s;
-  animation-iteration-count: infinite;
-  transform-origin: 50% 50%;
-  -webkit-animation: clientloop linear 80s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-transform-origin: 50% 50%;
-  -moz-animation: clientloop linear 80s;
-  -moz-animation-iteration-count: infinite;
-  -moz-transform-origin: 50% 50%;
-  -o-animation: clientloop linear 80s;
-  -o-animation-iteration-count: infinite;  
-  -o-transform-origin: 50% 50%;
-  -ms-animation: clientloop linear 80s;
-  -ms-animation-iteration-count: infinite;
-  -ms-transform-origin: 50% 50%;
+.clients-text a{
+	color: #FFFFFF;
+	text-decoration: none;
 }
-
-/*-------------CONTACT-----------------*/
+	
+.clients-text a:hover{
+	text-decoration: underline;
+}
+	
+/*****************************************************/
+/***********************CONTACT***********************/
+/*****************************************************/
+	
 .contact{
-    width: 100%;
-    background-color: #f1f4f6;
-    background-image: url(https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd1a3360ca47247b480/1463614426027/footer_bgimage.png?format=1500w);
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    position:relative;
-    margin-top: 200px;
+	clear: both;
+	position: static;
+}		
+	
+.contact-wrapper{
+	width: 80%;
+	clear: both;
+	position: static;
+	margin: 350px auto 200px auto;
+}	
+		
+.contact-container{
+	width: 100%;
+	height: auto;
+	padding: 0px;
 }
 
-.contact_angletop{
-    width: 100%;
-    height: 300px; 
-    background-color: #f1f4f6;
-    position: absolute;
-    z-index: -10;
-    top: -110px;
--webkit-transform: skewY(-4deg);
--moz-transform: skewY(-4deg);
--ms-transform: skewY(-4deg);
--o-transform: skewY(-4deg);
-transform: skewY(-4deg);
+.contact-container .contact-text{
+	text-align:center;
 }
 
-.contact_wrapper{
-    padding: 50px 80px 500px 80px;
+.contact-container .inline{
+	width: 32%;
+	text-align: center;
+	padding: 80px 0px 0px 0px;
+	margin: 0 auto;
+	display: inline-block;
 }
 
-.contact_header{
-    width:100%;
-    text-align: right;
-    margin-bottom: 50px;
+.contact-container .inline a {
+	font-family: 'Crimson Text', serif;
+	margin:0px;
+	padding:0px;
+	font-size:16px;
+	line-height:20px;
+	font-weight: 500;
+	color: #FFFFFF;
+	text-decoration:none;
+	-webkit-font-smoothing: antialiased;
 }
 
-.contact_tables{
-  text-align:center;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.contact_tables table{
-  display:inline-block;
-  padding:20px;
-}
-
-.contact_tables td{
-  text-align: center;
-  width: 300px;
-}
-
-.contact_tables td img{
-  width: 40px;
-  display:block;
-  margin: auto;
-  opacity: .4;
-}
-
-.contact_tables td a{
-  font-family: 'Martel', sans-serif;
-  font-size: 12px;
-  text-align: center;
-  font-weight: normal;
-  color: #aaaaaa;
-  text-decoration:none;
-}
-
-.contact_tables td a:hover{
-  color: #000000;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
+.contact-container .inline a:hover {
+	text-decoration:underline;
 }
 
 
-/*------------------------------------------------------------------------*/
-/*-----------------------------MOBILE STYLING-----------------------------*/
-/*------------------------------------------------------------------------*/
-@media (max-width: 2000px) {
-.contact_wrapper{
-    padding: 0px 80px 350px 80px;
+
+/*****************************************************/
+/***********************FOOTER************************/
+/*****************************************************/
+
+.gradientfooter{
+width: 100%;
+height: 10px;
+background: rgba(33,42,61,1);
+background: -moz-linear-gradient(left, rgba(33,42,61,1) 0%, rgba(42,49,64,1) 50%, rgba(33,42,61,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(33,42,61,1)), color-stop(50%, rgba(42,49,64,1)), color-stop(100%, rgba(33,42,61,1)));
+background: -webkit-linear-gradient(left, rgba(33,42,61,1) 0%, rgba(42,49,64,1) 50%, rgba(33,42,61,1) 100%);
+background: -o-linear-gradient(left, rgba(33,42,61,1) 0%, rgba(42,49,64,1) 50%, rgba(33,42,61,1) 100%);
+background: -ms-linear-gradient(left, rgba(33,42,61,1) 0%, rgba(42,49,64,1) 50%, rgba(33,42,61,1) 100%);
+background: linear-gradient(to right, rgba(33,42,61,1) 0%, rgba(42,49,64,1) 50%, rgba(33,42,61,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#212a3d', endColorstr='#212a3d', GradientType=1 );
 }
-}
-@media (max-width: 1000px) {
-.experience_wrapper{
-padding: 120px 40px 350px 40px
-}
-.contact_wrapper{
-    padding: 0px 80px 200px 80px;
+	
+
+/********************************************************/
+/***********************MOBILE CSS***********************/
+/********************************************************/
+
+@media screen and (max-width: 1200px) {
+
+.banner .text{
+	font-size:22vw;
+	line-height:22vw;
+	right: 10%;
 }
 }
 
+@media screen and (max-width: 960px) {
 
-@media (max-width: 650px) {
 
-#menu
-{
-  position: absolute;
-  width: 250px;
-  margin: -100px 0 0 -250px;
-  padding: 25px;
-  padding-top: 125px;
-  padding-bottom: 1000px;
+.vanish { 
+display: none !important;
+}
+	
+.fluid { 
+width: 100% !important; 
+max-width: 100% !important; 
+height: auto !important; 
 }
 
-.banner{
-    margin-bottom: 140px;
+/********************************************************/
+/***********************EXPERIENCE***********************/
+/********************************************************/
+	
+.experience-wrapper{
+	width: 80%;
+	margin: 150px auto 150px auto;
+}		
+
+.experience-text{
+	padding: 80px 40px 80px 40px;
+}	
+	
+/*******************************************************/
+/***********************PORTFOLIO***********************/
+/*******************************************************/
+	
+.portfolio-wrapper{
+	width: 80%;
+	margin: 150px auto 150px auto;
+}	
+
+	
+.portfolio-text{
+	padding: 80px 80px 80px 80px;
 }
 
-.banner_hello{
-    display:none;
+
+/*****************************************************/
+/***********************CLIENTS***********************/
+/*****************************************************/
+
+
+.clients-text{
+	padding: 0px 0px 0px 10%
 }
 
- .fadeindown1{
-    position: absolute;
-    left: 50%;
-    top: 0px;
-    width: 50%;
-    margin-left: -25%;
+.clients-text p{
+	width:43%;
+	display: inline-block;
+	text-align:left;
 }
 
-.banner_profile{
-    width: 100%;
+/*****************************************************/
+/***********************CONTACT***********************/
+/*****************************************************/
+
+.contact-container .inline{
+	width: 48%;
 }
 
-.banner_about{
-    position: absolute;
-    left: 50%;
-    margin-left: -40%;
-    bottom: -10%;
-    width: 80%;
-    height: auto;
-    text-align: left;
+
 }
 
-.banner_desktopspacer{
-    display: none;
+
+@media screen and (max-width: 520px) {
+
+h1 {
+	font-size:36px;
+	line-height:40px;
 }
 
-.banner_mobilespacer{
-    display: block;
+
+/********************************************************/
+/***********************NAVIGATION***********************/
+/********************************************************/
+
+
+	.navigation-content {
+	font-family: sans-serif;
+	width: 80%;
+	margin-left: 20%;
+	height: auto;
+	background-color: rgba(31,33,37,.95);
+	padding: 100px 0px 1500px 0px;
+	box-sizing: border-box;
+	text-align:left;
 }
 
-.experience_wrapper{
-padding: 80px 20px 250px 20px
+.navigation a {
+	font-size:22px;
+	line-height:60px;
 }
 
-.portfolio_wrapper{
-padding: 50px 20px 20px 20px
+/********************************************************/
+/***********************BANNER***************************/
+/********************************************************/
+
+.clouds-back{
+	display:none;
+}
+
+.clouds-mid{
+	display:none;
+}
+
+.clouds-front{
+	display:none;
+}
+
+.banner .text{
+	display:none;
+}
+
+.mobilebanner{
+	display:block;
+}
+	
+/********************************************************/
+/***********************EXPERIENCE***********************/
+/********************************************************/
+	
+.experience-wrapper{
+	width: 100%;
+	margin: 150px auto 150px auto;
+}		
+
+.experience-container{
+	-webkit-box-shadow: 15px 15px 30px -10px rgba(0,0,0,0.9);
+	-moz-box-shadow: 15px 15px 30px -10px rgba(0,0,0,0.9);
+	box-shadow: 15px 15px 30px -10px rgba(0,0,0,0.9);
+}
+
+.experience-line{
+	border: 2px solid #f35d5e;
+	top: 30px;
+	left: 30px;
+}
+
+.experience-text{
+	padding: 60px 20px 60px 20px;
+}	
+	
+.hideshow label .label1{       
+	width: 48%!important;
+	padding: 0px 0px 10px 0px;
+}
+.hideshow label .label2{       
+	width: 48%!important;
+	padding: 0px 0px 10px 0px;
+}
+.hideshow label .label3{       
+	width: 48%!important;
+	padding: 0px 0px 10px 0px;
+}
+.hideshow label .label4{       
+	width: 48%!important;
+	padding: 0px 0px 10px 0px;
+}
+	
+/*******************************************************/
+/***********************PORTFOLIO***********************/
+/*******************************************************/
+	
+.portfolio-wrapper{
+	width: 100%;
+	margin: 150px auto 300px auto;
+}	
+
+.portfolio-container{
+	-webkit-box-shadow: 15px 15px 30px -10px rgba(0,0,0,0.9);
+	-moz-box-shadow: 15px 15px 30px -10px rgba(0,0,0,0.9);
+	box-shadow: 15px 15px 30px -10px rgba(0,0,0,0.9);
+}		
+	
+.portfolio-line{
+	border: 2px solid #f35d5e;
+	top: 30px;
+	right: 30px;
+}
+	
+.portfolio-text{
+	padding: 60px 20px 60px 20px;
 }
 
 #portfolio-slideshow-wrap {
-    width: 80%;
-    margin:auto;
+    margin-top: 80px;
+    margin-bottom: 120px;
 }
 
-.contact_wrapper{
-    padding: 0px 80px 120px 80px;
-}
-
-} 
-
-@media (max-width: 450px) {
-  #menu
-{
-  position: absolute;
-  width: 200px;
-  margin: -100px 0 0 -150px;
-  padding: 25px;
-  padding-top: 125px;
-  padding-bottom: 1000px;
-}
-
-.banner_hello{
-    display:none;
-}
-
-input[type=radio]#experience-button-1:checked~.experience-arrows#experience-arrow-2, input[type=radio]#experience-button-2:checked~.experience-arrows#experience-arrow-3, input[type=radio]#experience-button-3:checked~.experience-arrows#experience-arrow-4,input[type=radio]#experience-button-4:checked~.experience-arrows#experience-arrow-1 {
+label.portfolio-arrows {
+	width: 20px;
+    color: #fa6465;
+    position: absolute;
+    top: 110%;
+    margin-top: 0px;
     display: none;
+}
+
+
+    input[type=radio]#portfolio-button-1:checked~.portfolio-arrows#portfolio-arrow-2, input[type=radio]#portfolio-button-2:checked~.portfolio-arrows#portfolio-arrow-3, input[type=radio]#portfolio-button-3:checked~.portfolio-arrows#portfolio-arrow-4,input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-1 {
+    right: 30%;
     }
 
-    input[type=radio]#experience-button-2:checked~.experience-arrows#experience-arrow-1, input[type=radio]#experience-button-3:checked~.experience-arrows#experience-arrow-2, input[type=radio]#experience-button-4:checked~.experience-arrows#experience-arrow-3, input[type=radio]#experience-button-1:checked~.experience-arrows#experience-arrow-4 {
-    display: none;
+    input[type=radio]#portfolio-button-2:checked~.portfolio-arrows#portfolio-arrow-1, input[type=radio]#portfolio-button-3:checked~.portfolio-arrows#portfolio-arrow-2, input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3, input[type=radio]#portfolio-button-1:checked~.portfolio-arrows#portfolio-arrow-4 {
+    left: 30%;
     }
-.experience-slide-content table{
-  padding:20px 0px 20px 0px;
+
+input[type=radio]#portfolio-button-2:checked~.portfolio-arrows#portfolio-arrow-1 { left: 30%;}
+
+input[type=radio]#portfolio-button-3:checked~.portfolio-arrows#portfolio-arrow-2 { left: 30%;}
+
+input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3 { left: 30%; }
+
+
+#portfolio-slideshow-wrap label[for=portfolio-button-1] { margin-left: 0px }
+
+#portfolio-slideshow-wrap label[for=portfolio-button-2] { margin-left: 0px }
+
+#portfolio-slideshow-wrap label[for=portfolio-button-3] { margin-left: 0px }
+
+#portfolio-slideshow-wrap label[for=portfolio-button-4] { margin-left: 0px }
+
+
+/*****************************************************/
+/***********************CLIENTS***********************/
+/*****************************************************/
+	
+.clients-text p{
+	width:100%;
+	display: inline-block;
+	text-align:center;
+}
+.clients-text{
+	padding: 0px 0px 0px 0px;
 }
 
-.experience_wrapper{
-padding: 80px 20px 200px 20px
+/*****************************************************/
+/***********************CONTACT***********************/
+/*****************************************************/
+
+.contact-container .inline{
+	width: 100%;
 }
 
-#portfolio-slideshow-wrap {
-    width: 80%;
-    margin: auto;
+.contact-wrapper{
+	margin: 300px auto 200px auto;
 }
-.cta_fullportfolio{
-    padding: 20px 50px;
+	
 }
 
-.contact_wrapper{
-    padding: 0px 20px 50px 20px;
-}
 
-}
 
-@keyframes clientloop {
-  0% { background-position:  0px 0px;}
-  100% { background-position:  -3300px 0px;}
-}
-
-@-moz-keyframes clientloop {
-  0% { background-position:  0px 0px;}
-  100% { background-position:  -3300px 0px;}
-}
-
-@-webkit-keyframes clientloop {
-  0% { background-position:  0px 0px;}
-  100% { background-position:  -3300px 0px;}
-}
-
-@-o-keyframes clientloop {
-  0% { background-position:  0px 0px;}
-  100% { background-position:  -3300px 0px;}
-}
-
-@-ms-keyframes clientloop {
-  0% { background-position:  0px 0px;}
-  100% { background-position:  -3300px 0px;}
+.fadeindown{
+  animation: fadeindown ease 1.5s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  animation-fill-mode:forwards; /*when the spec is finished*/
+  -webkit-animation: fadeindown ease 1.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
+  -moz-animation: fadeindown ease 1.5s;
+  -moz-animation-iteration-count: 1;
+  -moz-transform-origin: 50% 50%;
+  -moz-animation-fill-mode:forwards; /*FF 5+*/
+  -o-animation: fadeindown ease 1.5s;
+  -o-animation-iteration-count: 1;
+  -o-transform-origin: 50% 50%;
+  -o-animation-fill-mode:forwards; /*Not implemented yet*/
+  -ms-animation: fadeindown ease 1.5s;
+  -ms-animation-iteration-count: 1;
+  -ms-transform-origin: 50% 50%;
+  -ms-animation-fill-mode:forwards; /*IE 10+*/
 }
 
 @keyframes fadeindown{
-  0% { opacity:0; transform:  translate(0px,-75px)  ; }
-  100% { opacity:1; transform:  translate(0px,0px)  ; }
+  0% {opacity:0;transform:  translate(0px,-25px)  ;}
+  100% {opacity:1;transform:  translate(0px,0px)  ;}
 }
 
 @-moz-keyframes fadeindown{
-  0% { opacity:0;-moz-transform:  translate(0px,-75px)  ;}
-  100% { opacity:1; -moz-transform:  translate(0px,0px)  ;}
+  0% {opacity:0;-moz-transform:  translate(0px,-25px)  ;}
+  100% {opacity:1;-moz-transform:  translate(0px,0px)  ;}
 }
 
 @-webkit-keyframes fadeindown {
-  0% { opacity:0; -webkit-transform:  translate(0px,-75px)  ;}
-  100% {opacity:1; -webkit-transform:  translate(0px,0px)  ;}
+  0% {opacity:0;-webkit-transform:  translate(0px,-25px)  ;}
+  100% { opacity:1; -webkit-transform:  translate(0px,0px)  ; }
 }
+
 @-o-keyframes fadeindown {
-  0% { opacity:0; -o-transform:  translate(0px,-75px)  ;}
-  100% { opacity:1; -o-transform:  translate(0px,0px)  ;}
+  0% { opacity:0; -o-transform:  translate(0px,-25px)  ;}
+  100% {  opacity:1; -o-transform:  translate(0px,0px)  ;}
 }
+
 @-ms-keyframes fadeindown {
-  0% { opacity:0; -ms-transform:  translate(0px,-75px)  ;}
-  100% { opacity:1; -ms-transform:  translate(0px,0px)  ;}
+  0% { opacity:0; -ms-transform:  translate(0px,-25px)  ;}
+  100% {  opacity:1;  -ms-transform:  translate(0px,0px)  ;}
 }
 
-@keyframes fadeindowndelay{
-  0% { opacity:0; transform:  translate(0px,-50px)  ; }
-  50% { opacity:0; transform:  translate(0px,-50px)  ; }
-  100% { opacity:1; transform:  translate(0px,0px)  ; }
+.fadeinup{
+  animation: fadeinup ease 2.5s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  animation-fill-mode:forwards; /*when the spec is finished*/
+  -webkit-animation: fadeinup ease 2.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
+  -moz-animation: fadeinup ease 2.5s;
+  -moz-animation-iteration-count: 1;
+  -moz-transform-origin: 50% 50%;
+  -moz-animation-fill-mode:forwards; /*FF 5+*/
+  -o-animation: fadeinup ease 2.5s;
+  -o-animation-iteration-count: 1;
+  -o-transform-origin: 50% 50%;
+  -o-animation-fill-mode:forwards; /*Not implemented yet*/
+  -ms-animation: fadeinup ease 2.5s;
+  -ms-animation-iteration-count: 1;
+  -ms-transform-origin: 50% 50%;
+  -ms-animation-fill-mode:forwards; /*IE 10+*/
 }
 
-@-moz-keyframes fadeindowndelay{
-  0% { opacity:0;-moz-transform:  translate(0px,-50px)  ;}
-  50% { opacity:0;-moz-transform:  translate(0px,-50px)  ;}
-  100% { opacity:1; -moz-transform:  translate(0px,0px)  ;}
+@keyframes fadeinup{
+  0% {opacity:0;transform:  translate(0px,150px)  ;}
+  20% {opacity:0;transform:  translate(0px,150px)  ;}
+  100% {opacity:.65;transform:  translate(0px,0px)  ;}
 }
 
-@-webkit-keyframes fadeindowndelay {
-  0% { opacity:0; -webkit-transform:  translate(0px,-50px)  ;}
-  50% { opacity:0; -webkit-transform:  translate(0px,-50px)  ;}
-  100% {opacity:1; -webkit-transform:  translate(0px,0px)  ;}
-}
-@-o-keyframes fadeindowndelay {
-  0% { opacity:0; -o-transform:  translate(0px,-50px)  ;}
-  50% { opacity:0; -o-transform:  translate(0px,-50px)  ;}
-  100% { opacity:1; -o-transform:  translate(0px,0px)  ;}
-}
-@-ms-keyframes fadeindowndelay {
-  0% { opacity:0; -ms-transform:  translate(0px,-50px)  ;}
-  50% { opacity:0; -ms-transform:  translate(0px,-50px)  ;}
-  100% { opacity:1; -ms-transform:  translate(0px,0px)  ;}
+@-moz-keyframes fadeinup{
+  0% {opacity:0;-moz-transform:  translate(0px,150px)  ;}
+  20% {opacity:0;-moz-transform:  translate(0px,150px)  ;}
+  100% {opacity:.65;-moz-transform:  translate(0px,0px)  ;}
 }
 
-@keyframes animateonscroll{
-  0% { opacity:0; transform:  translate(0px,-50px)  ; }
-  33% { opacity:0; transform:  translate(0px,-50px)  ; }
-  100% { opacity:1; transform:  translate(0px,0px)  ; }
+@-webkit-keyframes fadeinup {
+  0% {opacity:0;-webkit-transform:  translate(0px,150px)  ;}
+  20% {opacity:0;-webkit-transform:  translate(0px,150px)  ;}
+  100% { opacity:.65; -webkit-transform:  translate(0px,0px)  ; }
 }
 
-@-moz-keyframes animateonscroll{
-  0% { opacity:0;-moz-transform:  translate(0px,-50px)  ;}
-  33% { opacity:0;-moz-transform:  translate(0px,-50px)  ;}
-  100% { opacity:1; -moz-transform:  translate(0px,0px)  ;}
+@-o-keyframes fadeinup {
+  0% { opacity:0; -o-transform:  translate(0px,150px)  ;}
+  20% { opacity:0; -o-transform:  translate(0px,150px)  ;}
+  100% {  opacity:.65; -o-transform:  translate(0px,0px)  ;}
 }
 
-@-webkit-keyframes animateonscroll {
-  0% { opacity:0; -webkit-transform:  translate(0px,-50px)  ;}
-  33% { opacity:0; -webkit-transform:  translate(0px,-50px)  ;}
-  100% {opacity:1; -webkit-transform:  translate(0px,0px)  ;}
-}
-@-o-keyframes animateonscroll {
-  0% { opacity:0; -o-transform:  translate(0px,-50px)  ;}
-  33% { opacity:0; -o-transform:  translate(0px,-50px)  ;}
-  100% { opacity:1; -o-transform:  translate(0px,0px)  ;}
-}
-@-ms-keyframes animateonscroll {
-  0% { opacity:0; -ms-transform:  translate(0px,-50px)  ;}
-  33% { opacity:0; -ms-transform:  translate(0px,-50px)  ;}
-  100% { opacity:1; -ms-transform:  translate(0px,0px)  ;}
+@-ms-keyframes fadeinup {
+  0% { opacity:0; -ms-transform:  translate(0px,150px)  ;}
+  20% { opacity:0; -ms-transform:  translate(0px,150px)  ;}
+  100% {  opacity:.65;  -ms-transform:  translate(0px,0px)  ;}
 }
 
+.fadedownback{
+  animation: fadedownback ease 2s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  animation-fill-mode:forwards; /*when the spec is finished*/
+  -webkit-animation: fadedownback ease 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
+  -moz-animation: fadedownback ease 2s;
+  -moz-animation-iteration-count: 1;
+  -moz-transform-origin: 50% 50%;
+  -moz-animation-fill-mode:forwards; /*FF 5+*/
+  -o-animation: fadedownback ease 2s;
+  -o-animation-iteration-count: 1;
+  -o-transform-origin: 50% 50%;
+  -o-animation-fill-mode:forwards; /*Not implemented yet*/
+  -ms-animation: fadedownback ease 2s;
+  -ms-animation-iteration-count: 1;
+  -ms-transform-origin: 50% 50%;
+  -ms-animation-fill-mode:forwards; /*IE 10+*/
+}
 
+@keyframes fadedownback{
+  0% { transform:  translate(0px,-25px)  ;}
+  100% { transform:  translate(0px,0px)  ;}
+}
 
+@-moz-keyframes fadedownback{
+  0% { -moz-transform:  translate(0px,-25px)  ;}
+  100% { -moz-transform:  translate(0px,0px)  ;}
+}
+
+@-webkit-keyframes fadedownback {
+  0% { -webkit-transform:  translate(0px,-25px)  ;}
+  100% {  -webkit-transform:  translate(0px,0px)  ; }
+}
+
+@-o-keyframes fadedownback {
+  0% {  -o-transform:  translate(0px,-25px)  ;}
+  100% {  -o-transform:  translate(0px,0px)  ;}
+}
+
+@-ms-keyframes fadedownback {
+  0% { -ms-transform:  translate(0px,-25px)  ;}
+  100% {  -ms-transform:  translate(0px,0px)  ;}
+}
+
+.fadedownmid{
+  animation: fadedownmid ease 2s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  animation-fill-mode:forwards; /*when the spec is finished*/
+  -webkit-animation: fadedownmid ease 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
+  -moz-animation: fadedownmid ease 2s;
+  -moz-animation-iteration-count: 1;
+  -moz-transform-origin: 50% 50%;
+  -moz-animation-fill-mode:forwards; /*FF 5+*/
+  -o-animation: fadedownmid ease 2s;
+  -o-animation-iteration-count: 1;
+  -o-transform-origin: 50% 50%;
+  -o-animation-fill-mode:forwards; /*Not implemented yet*/
+  -ms-animation: fadedownmid ease 2s;
+  -ms-animation-iteration-count: 1;
+  -ms-transform-origin: 50% 50%;
+  -ms-animation-fill-mode:forwards; /*IE 10+*/
+}
+
+@keyframes fadedownmid{
+  0% { transform:  translate(0px,-45px)  ;}
+  100% { transform:  translate(0px,0px)  ;}
+}
+
+@-moz-keyframes fadedownmid{
+  0% { -moz-transform:  translate(0px,-45px)  ;}
+  100% { -moz-transform:  translate(0px,0px)  ;}
+}
+
+@-webkit-keyframes fadedownmid {
+  0% { -webkit-transform:  translate(0px,-45px)  ;}
+  100% {  -webkit-transform:  translate(0px,0px)  ; }
+}
+
+@-o-keyframes fadedownmid {
+  0% {  -o-transform:  translate(0px,-45px)  ;}
+  100% {  -o-transform:  translate(0px,0px)  ;}
+}
+
+@-ms-keyframes fadedownmid {
+  0% { -ms-transform:  translate(0px,-45px)  ;}
+  100% {  -ms-transform:  translate(0px,0px)  ;}
+}
+
+.fadedownfront{
+  animation: fadedownfront ease 2s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  animation-fill-mode:forwards; /*when the spec is finished*/
+  -webkit-animation: fadedownfront ease 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
+  -moz-animation: fadedownfront ease 2s;
+  -moz-animation-iteration-count: 1;
+  -moz-transform-origin: 50% 50%;
+  -moz-animation-fill-mode:forwards; /*FF 5+*/
+  -o-animation: fadedownfront ease 2s;
+  -o-animation-iteration-count: 1;
+  -o-transform-origin: 50% 50%;
+  -o-animation-fill-mode:forwards; /*Not implemented yet*/
+  -ms-animation: fadedownfront ease 2s;
+  -ms-animation-iteration-count: 1;
+  -ms-transform-origin: 50% 50%;
+  -ms-animation-fill-mode:forwards; /*IE 10+*/
+}
+
+@keyframes fadedownfront{
+  0% { transform:  translate(0px,-65px)  ;}
+  100% { transform:  translate(0px,0px)  ;}
+}
+
+@-moz-keyframes fadedownfront{
+  0% { -moz-transform:  translate(0px,-65px)  ;}
+  100% { -moz-transform:  translate(0px,0px)  ;}
+}
+
+@-webkit-keyframes fadedownfront {
+  0% { -webkit-transform:  translate(0px,-65px)  ;}
+  100% {  -webkit-transform:  translate(0px,0px)  ; }
+}
+
+@-o-keyframes fadedownfront {
+  0% {  -o-transform:  translate(0px,-65px)  ;}
+  100% {  -o-transform:  translate(0px,0px)  ;}
+}
+
+@-ms-keyframes fadedownfront {
+  0% { -ms-transform:  translate(0px,-65px)  ;}
+  100% {  -ms-transform:  translate(0px,0px)  ;}
+}
+
+	
 </style>
 </head>
+
 <body>
-<div class="header">
+<div class="sitewidth fluid">
+
+<div class="header fadeindown">
+
 <div class="header_logo">
-    <a href="#about"><img src="http://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/t/56dbc02e86db438d71d50107/1461873589754/?format=1500w" width="70" height="65" border="none" alt="Hello, nice to meet ya!"></a>
+    <a href="#about"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882909a59cc684854a5a849/1484951707100/logocolor.png" width="70" border="none" alt=""></a>
 </div>
 
-<!--NAV-->
-<nav role="navigation">
-  <div id="menuToggle">
-    <input type="checkbox"/>
+<div class="navigation">
+<input type="checkbox" value="selected" id="nav" class="navigation-input">
+<label for="nav" class="navigation-label">
     <span></span>
     <span></span>
     <span></span>
+</label>
+<div role="navigation" id="navigationID" class="navigation-content">
+<br><br><br><br><br><br>
+<a href="#about">About Me</a>
+<a href="#experience">Experience</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#clients">Clients</a>
+<a href="#contact">Contact Me</a>
 
-    <ul id="menu">
-      <a href="#about"><li>ABOUT ME</li></a>
-      <a href="#experience"><li>EXPERIENCE</li></a>
-      <a href="#portfolio"><li>PORTFOLIO</li></a>
-      <a href="#contact"><li>CONTACT</li></a>
-    </ul>
-  </div>
-</nav>
+</div>
+</div>
 
 
 </div>
-<div class="header_spacer"></div>
- <!--BANNER-->
-<div class="banner" id="about">
-<img class="banner_desktopspacer" src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd57c65e401e660317b/1463614422655/Dspacer.png?format=1500w" width="100%"/>
-<img class="banner_mobilespacer" src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd57c65e401e6603178/1463614422341/Mspacer.png?format=500w" width="50%"/>
-<div class="fadeindown2"><div class="banner_hello" id="hello" ><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd5e707eb4e24ed39d7/1463614427306/hello.png?format=2500w" width="100%"/></div></div>
-<div class="fadeindown1"><div class="banner_profile" id="profile" ><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd4a3360ca47247b49b/1463614432076/Profile.png?format=500w" width="100%"/></div></div>
-<div class="banner_about">
-    <h1><span class="slash">&#xd8;</span><span>1</span>&nbsp;&nbsp;&nbsp;ABOUT</h1>
-    <p>My name is Will and I am a Designer, Photographer, Videographer, Front&nbsp;End&nbsp;Developer, and Freelance&nbsp;Artist.</p>
-</div>
-    
-</div>
- <!--Experience-->
-<div class="experience" id="experience">
-<div class="experience_wrapper">
-<div class="revealOnScroll">
-<div class="experience_header">
-    <h1><span class="slash">&#xd8;</span><span>2</span>&nbsp;&nbsp;&nbsp;EXPERIENCE</h1>
-</div>
-<div id="experience-slideshow-wrap">
-        <input checked="checked" id="experience-button-1" name="experience-controls" type="radio">
-        <label for="experience-button-1"></label> <input id="experience-button-2" name="experience-controls"
-        type="radio"> <label for="experience-button-2"></label> <input id="experience-button-3" name=
-        "experience-controls" type="radio"> <label for="experience-button-3"></label> <input id="experience-button-4" name=
-        "experience-controls" type="radio"> <label for="experience-button-4"></label><label class=
-        "experience-arrows" for="experience-button-1" id="experience-arrow-1">&gt;</label> <label class="experience-arrows"
-        for="experience-button-2" id="experience-arrow-2">&gt;</label> <label class="experience-arrows" for=
-        "experience-button-3" id="experience-arrow-3">&gt;</label><label class="experience-arrows" for=
-        "experience-button-4" id="experience-arrow-4">&gt;</label>
-
-        <div id="experience-slideshow-inner">
-            <ul>
-                <li id="experience-slide1">
-		<div class="experience-slide-content">
-		    <table>
-	       	        <tr>
-			    <td><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd4e707eb4e24ed399a/1463614421031/experience_SC.png?format=2500w"/></td>
-			    
-        		</tr>
-	       	        <tr>
-			    <td><h1>Designer and Front End Developer</h1><p>(2015-Present)</p><br></td>
-        		</tr>
-			<tr>
-			    <td>
-				<ul>
-				    <li><p>Design and build on-site and email re-marketing visuals for many of the largest ecommerce retailers in the United States.</p></li>
-				    <li><p>Cultivate re-marketing strategies based on client initiatives and objectives.</p></li>
-				    <li><p>Restructure internal business processes to streamline and stabilize operations during rapid expansion.</p></li>
-				    <li><p>Initiate A/B testing effort, facilitating customer acquisition and boosting customer retention.</p></li>
-				    <li><p>Support business development and marketing teams with client acquisition and strategy development.</p></li>
-				    <li><p>Consult client design and marketing teams to clarify objectives and demonstrate value to ultimately meet client requirements and drive conversion.</p></li>
-				    <li><p>Utilize advanced problem solving skills to debug and repair broken templates under business critical deadlines.</p></li>
-				    <li><p>Pioneer innovation push in platform functionality bolstering our competitive advantage and product differentiation within the market.</p></li>
-				    <li><p>Advise line managers and upper management regarding process and cultural inefficiencies to help strengthen productivity.</p></li>
-                    <li><p>Assume primary copywrighting role for all implementations and re-designs.</p></li>
-				<ul>
-			    </td>
-        		</tr>
-		    </table>
-
+<div class="banner" id="banner">
+		<div class="banner-wrapper">
+			<img class="mobilebanner fadedownback" src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5883c5c946c3c44ae80effab/1485030857912/BannerMobile.jpg" width="100%" alt="">
+			<img class="clouds-back fadedownback" src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/58839fda6b8f5b4ed613faa6/1485021214151/Cloud_Back.png" width="100%" alt="">
+			<div class="text fadeinup"><div id="back"><span>H</span>E<span>L</span>L<span>O</span></div></div>
+			<img class="clouds-mid fadedownmid" src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882974dbebafb5fec10d377/1484953491806/Cloud_Mid.png" width="100%" alt="">	
+			<div class="text fadeinup"><div id="front">H<span>E</span>L<span>L</span>O</div></div>
+			<img class="clouds-front fadedownfront" src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882973b1e5b6c186545b347/1484953487019/Cloud_Front.png" width="100%" alt="">
+			<img class="shaka fadeindown" src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/588290d886e6c079914daf9b/1484951768958/shaka.png" width="78" alt="">
 		</div>
-                </li>
-
-                <li id="experience-slide2">
-		<div class="experience-slide-content">
-
-		    <table>
-	       	        <tr>
-			    <td><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd4e707eb4e24ed399d/1463614421200/experience_HRX.png?format=2500w"/></td>
-			    
-        		</tr>
-	       	        <tr>
-			    <td><h1>Marketing and Design Manager</h1><p>(2013-2015)</p><br></td>
-        		</tr>
-			<tr>
-			    <td>
-				<ul>
-				    <li><p>Design and produce company marketing materials including collateral, trade show visuals, presentations, etc.</p></li>
-				    <li><p>Develop and maintain several client websites, implementing search engine optimization strategies to enhance web traffic.</p></li>
-				    <li><p>Generate design content for all marketing materials and direct all graphic design initiatives.</p></li>
-				    <li><p>Direct all strategic management processes involving building brand visibility/awareness, brand identity cultivation, marketing initiatives, product development, and implementation of growth practices.</p></li>
-				    <li><p>Track and monitor project timelines to ensure efficiency and productivity in order to meet deadlines.</p></li>
-				    <li><p>Manage all system reporting operations from custom report generation, maintenance, and deployment.</p></li>
-				    <li><p>Create and strengthen client relations through onsite meetings and interaction.</p></li>
-				    <li><p>Lead tradeshow and conference appearances, increasing qualified leads by over 190%.</p></li>
-				    <li><p>100% increase in revenue since hire.  300% increase expected in 2015 pending completion of current contract negotiations.</p></li>
-				    <li><p>Acquire and negotiate several new client contracts in excess of $7 million.</p></li>
-				<ul>
-			    </td>
-        		</tr>
-		    </table>
-
-		</div>
-                </li>
-
-                <li id="experience-slide3">
-		<div class="experience-slide-content">
-
-		    <table>
-	       	        <tr>
-			    <td><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd4e707eb4e24ed39a0/1463614421432/experience_FSS.png?format=2500w"/></td>
-			    
-        		</tr>
-	       	        <tr>
-			    <td><h1>Manager</h1><p>(2005-2013)</p><br></td>
-        		</tr>
-			<tr>
-			    <td>
-				<ul>
-				    <li><p>Develop and approve designs for advertisements and product graphics.</p></li>
-				    <li><p>Increased 4th quarter sales by 25% within first four months as manager.</p></li>
-				    <li><p>Generate strategic business plans that help bolster profitability in a diminishing market.</p></li>
-				    <li><p>Develop business proposals in order to pursue and acquire mutually beneficial partnerships.</p></li>
-				    <li><p>Analyze industry statistics and sales data to project and tailor future inventory purchases.</p></li>
-				    <li><p>Coordinate marketing campaigns and special events (Customer Loyalty Program, Skate Fest, etc.).</p></li>
-				    <li><p>Direct the organization, advertising, sponsor acquisition, and operations of the largest skate contest in Northern Virginia.</p></li>
-				    <li><p>Work with affiliate company, Ski Travel, to organize, manage, and supervise large scale ski trips.</p></li>
-				<ul>
-			    </td>
-        		</tr>
-		    </table>
-
-		</div>
-                </li>
-
-                <li id="experience-slide4">
-		<div class="experience-slide-content">
-
-		    <table>
-	       	        <tr>
-			    <td><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd4e707eb4e24ed3997/1463614421131/experience_GMU.png?format=1500w"/></td>
-			    
-        		</tr>
-	       	        <tr>
-			    <td><h1>Bachelor of Science in Business, Concentration in Management</h1><p>(2007-2011)</p></td>
-        		</tr>
-			<tr>
-			    <td>
-				<h4>Relevant Coursework</h4>
-				<p>Marketing Research Techniques and Applications, Strategic Management and Advanced Business Models, Negotiations in Organizations, Cross Cultural and Global Management, Diversity in Organizations, Business Information Systems.</p>
-			    </td>
-        		</tr>
-		    </table>
-
-		</div>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-</div>  
 </div>
-    
-    
+<div class="about fadeindown" id="about">
+		<div class="about-wrapper">
+				<h2>About Me</h2>
+				<p>Hi, my name is Will, and I'm a multi-disciplinary creative currently living and working in Washington DC.  By day I'm a Designer, Front End Developer, and Branding Specialist, but by night I also freelance as a Photographer, Cinematographer, Artist, and Small Business Consultant.  My professional skill set is inordinately ecclectic, I'm an innate problem solver, and fervently curious. Outside of work, I spend my time hiking, traveling, fishing, surfing, <a href="https://www.instagram.com/p/BDgVvVTlSnI/" target="_blank">swimming with sharks</a>, and <a href="https://www.instagram.com/p/ifY6yClSn0/" target="_blank">snowboarding</a> <span>(Formerly rode for <a href="https://www.burton.com" target="_blank">Burton</a>, <a href="http://www.dragonalliance.com/" target="_blank">Dragon</a>, and <a href="http://crabgrab.com/" target="_blank">Crab Grab</a>)</span>.</p>
+		</div>
 </div>
- <!--Portfolio-->
-<div class="portfolio" id="portfolio">
-<div class="portfolio_wrapper">
-<div class="revealOnScroll">
-<div class="portfolio_header">
-    <h1><span class="slash">&#xd8;</span><span>3</span>&nbsp;&nbsp;&nbsp;PORTFOLIO</h1>
+
+
+<div class="experience fadeindown" id="experience">
+		<div class="experience-wrapper">
+			<div class="experience-container">
+				<div class="experience-text">
+				<h1>Experience</h1>
+				
+
+
+				
+				
+				
+				
+<div class="hideshow">
+<input type="radio" name="hideshow-input" id="slide1" checked/>
+<label for="slide1" class="hideshow-label"><div class="label1"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882a562ebbd1a30e97d0432/1484957026390/exp_sc.png" border="none" alt=""></div></label> 
+<input type="radio" name="hideshow-input" id="slide2"/>
+<label for="slide2" class="hideshow-label"><div class="label2"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882a562e58c626edaf0e433/1484957026365/exp_hrx.png" border="none" alt=""></div></label> 
+<input type="radio" name="hideshow-input" id="slide3"/>
+<label for="slide3" class="hideshow-label"><div class="label3"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882a5616a49636e23cacd45/1484957026089/exp_fss.png" border="none" alt=""></div></label> 
+<input type="radio" name="hideshow-input" id="slide4"/>
+<label for="slide4" class="hideshow-label"><div class="label4"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882a561bf629a055adf9e6d/1484957026087/exp_gmu.png" border="none" alt=""></div></label> 
+<div role="hideshow" id="hideshowID" class="hideshow-content">
+<div class="slide content1">
+Designer and Front End Developer  (2015-Present)<br>
+<ul>
+<li>Design and build on-site and email re-marketing visuals for many of the <a href="#clients">largest ecommerce retailers</a> in the United States.</li>
+<li>Cultivate re-marketing strategies based on client initiatives and objectives.</li>
+<li>Restructure internal business processes to streamline and stabilize operations during rapid expansion.</li>
+<li>Initiate A/B testing effort, facilitating customer acquisition and boosting customer retention.</li>
+<li>Developed and directed all data management and data analytics to generate relevant and actionable data for all internal US teams. 
+<li>Support business development and marketing teams with client acquisition and strategy development.</li>
+<li>Consult client design and marketing teams to clarify objectives and demonstrate value to ultimately meet client requirements and drive conversion.</li>
+<li>Utilize advanced problem solving skills to debug and repair broken templates under business critical deadlines.</li>
+<li>Pioneer innovation push in platform functionality bolstering our competitive advantage and product differentiation within a saturated market.</li>
+<li>Advise line managers and upper management regarding process, cultural deficiencies, and brand development to help strengthen productivity, efficiency, and longevity.</li>
+<li>Assume primary copywrighting role for all implementations and re-designs.</li>
+</ul>
 </div>
-<div id="portfolio-slideshow-wrap">
+<div class="slide content2">
+Marketing and Design Manager  (2013-2015)<br>
+<ul>
+<li>Design and produce company marketing materials including company collateral, trade show visuals, presentations, etc.</li>
+<li>Develop and maintain several client websites and implement search engine optimization strategies to drive web traffic.</li>
+<li>Direct all strategic management processes involving building brand visibility/awareness, brand identity cultivation, marketing initiatives, product development, and implementation of growth practices.</li>
+<li>Track and monitor project timelines to ensure efficiency and productivity in order to meet deadlines.</li>
+<li>Manage all system reporting operations from data management, custom report generation, maintenance, and deployment.</li>
+<li>Create and strengthen client relations through onsite meetings and interaction.</li>
+<li>Lead tradeshow and conference appearances, increasing qualified leads by over 190%.</li>
+<li>Played an integral role in an overall increase of over 300% revenue during tenure.</li>
+<li>Acquired and negotiated several multi-million dollar government contracts</li>
+</ul>
+</div>
+<div class="slide content3">
+Manager  (2005-2013)<br>
+<ul>
+<li>Develop and approve designs for advertisements and product graphics.</li>
+<li>Increased 4th quarter sales by 25% within first four months as manager.</li>
+<li>Generate strategic business plans that help bolster profitability in a diminishing market.</li>
+<li>Develop business proposals in order to pursue and acquire mutually beneficial partnerships.</li>
+<li>Analyze industry statistics and sales data to project and tailor future inventory purchases.</li>
+<li>Coordinate marketing campaigns and special events (Customer Loyalty Program, Skate Fest, etc.).</li>
+<li>Direct the organization, advertising, sponsor acquisition, and operations of the largest skate contest in Northern Virginia.</li>
+<li>Work with affiliate company, Ski Travel, to organize, manage, and supervise large scale ski trips.</li>
+</ul>
+</div>
+<div class="slide content4">
+Bachelor of Science in Business, Concentration in Management  (2007-2011)<br><br>
+<span>Relevant Coursework<br>
+Marketing Research Techniques and Applications, Strategic Management and Advanced Business Models, Negotiations in Organizations, Cross Cultural and Global Management, Diversity in Organizations, Business Information Systems.</span>
+</div>
+
+</div> 
+</div>
+				
+				
+				
+				
+				
+				
+				</div>
+			</div>
+			<div class="experience-line"></div>
+		</div>
+</div>
+
+<div class="portfolio fadeindown" id="portfolio">
+		<div class="portfolio-wrapper">
+			<div class="portfolio-container">
+				<div class="portfolio-text">
+				<h1>Portfolio</h1>
+				<div id="portfolio-slideshow-wrap">
         <input checked="checked" id="portfolio-button-1" name="portfolio-controls" type="radio">
         <label for="portfolio-button-1"></label> <input id="portfolio-button-2" name="portfolio-controls"
         type="radio"> <label for="portfolio-button-2"></label> <input id="portfolio-button-3" name=
         "portfolio-controls" type="radio"> <label for="portfolio-button-3"></label> <input id="portfolio-button-4" name=
         "portfolio-controls" type="radio"> <label for="portfolio-button-4"></label><label class=
-        "portfolio-arrows" for="portfolio-button-1" id="portfolio-arrow-1">&gt;</label> <label class="portfolio-arrows"
-        for="portfolio-button-2" id="portfolio-arrow-2">&gt;</label> <label class="portfolio-arrows" for=
-        "portfolio-button-3" id="portfolio-arrow-3">&gt;</label><label class="portfolio-arrows" for=
-        "portfolio-button-4" id="portfolio-arrow-4">&gt;</label>
+        "portfolio-arrows" for="portfolio-button-1" id="portfolio-arrow-1">&#9002;</label> <label class="portfolio-arrows"
+        for="portfolio-button-2" id="portfolio-arrow-2">&#9002;</label> <label class="portfolio-arrows" for=
+        "portfolio-button-3" id="portfolio-arrow-3">&#9002;</label><label class="portfolio-arrows" for=
+        "portfolio-button-4" id="portfolio-arrow-4">&#9002;</label>
 
         <div id="portfolio-slideshow-inner">
             <ul>
                 <li id="portfolio-slide1">
 		<div class="portfolio-slide-content">
 
-			<a href="http://www.will-rust.com/design/"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd3a3360ca47247b498/1463614432408/Portfolio1.png?format=1000w" class="benefit1-image";/></a>
+			<a href="http://www.will-rust.com/design/"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/56bfe3085559867615e0172e/588193b5d1758eb0373ca816/1484886966236/KimptonResized.jpg"/></a>
 			
 		</div>
                 </li>
@@ -1423,7 +1574,7 @@ padding: 80px 20px 200px 20px
                 <li id="portfolio-slide2">
 		<div class="portfolio-slide-content">
 
-			<a href="http://www.will-rust.com/design/"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd2e707eb4e24ed3993/1463614424410/Portfolio3.png?format=1000w" class="benefit2-image";/></a>
+			<a href="http://www.will-rust.com/design/"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/56bfe3085559867615e0172e/588193b0e4fcb52dcfa9184f/1484886961870/BeatsResized.jpg" /></a>
  
 		</div>
                 </li> 
@@ -1431,7 +1582,7 @@ padding: 80px 20px 200px 20px
                 <li id="portfolio-slide3">
 		<div class="portfolio-slide-content">
 
-			<a href="http://www.will-rust.com/design/"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd2a3360ca47247b492/1463614422717/Portfolio2.png?format=1000w" class="benefit2-image";/></a>
+			<a href="http://www.will-rust.com/design/"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/56bfe3085559867615e0172e/585ae6e6893fc0cc91ba67c3/1482352366426/BooksAMillion.gif" /></a>
 
 		</div>
                 </li>
@@ -1439,85 +1590,99 @@ padding: 80px 20px 200px 20px
                 <li id="portfolio-slide4">
 		<div class="portfolio-slide-content">
 
-			<a href="http://www.will-rust.com/design/"><img src="http://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/56bfe3085559867615e0172e/56f9529027d4bdeb602679b6/1461873541869/?format=2500w" class="benefit2-image";/></a>
+			<a href="http://www.will-rust.com/photo/"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/56bfe3173c44d89a58183c87/583475f4197aea2c8acadf1a/1479833083550/IMG_0963.jpg" /></a>
 
 		</div>
                 </li>
             </ul>
         </div>
     </div>
-  
-    
-<div class="portfolio_cta">
-    <a class="cta_fullportfolio" href="http://www.will-rust.com/">FULL PORTFOLIO</a>
-</div>
-<div class="portfolio_cta2">
-    <a class="cta_codepen" href="http://codepen.io/wrust152/">VIEW CODEPEN</a>
-</div>
-</div>
-<div class="revealOnScroll">
-<div class="portfolio_clients">
-    <h1><span class="slash">&#xd8;</span><span>4</span>&nbsp;&nbsp;&nbsp;CLIENTS</h1>
-    <p>Notable brands I have worked with</p>
-</div>
-<div class="portfolio_carousel">
-</div>
+			<a class="cta_fullportfolio" href="http://www.will-rust.com/" target="_blank">View Full Portfolio</a>
+				</div>
+			</div>
+			<div class="portfolio-line"></div>
+		</div>
 </div>
 
-</div> 
-</div>
- <!--Contact-->
-<div class="contact" id="contact">
-<div class="contact_angletop"></div>
-<div class="contact_wrapper">
-<div class="revealOnScroll">
-<div class="contact_header">
-    <h1><span class="slash">&#xd8;</span><span>5</span>&nbsp;&nbsp;&nbsp;CONTACT</h1>
-</div>
-<div class="contact_tables">
 
-	<table>
-	<tr>
-	<td><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd2a3360ca47247b48f/1463614421079/contact_residence.png?format=750w"/></td>
-        </tr>
-	<tr>
-	<td><h2>RESIDENCE</h2></td>
-        </tr>
-	<tr>
-	<td><p><a href="">Fairfax, Virginia</a></p><br></td>
-        </tr>
-	</table>
-
-	<table>
-	<tr>
-	<td><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd2e707eb4e24ed398f/1463614419349/contact_phone.png?format=750w"/></td>
-        </tr>
-	<tr>
-	<td><h2>Phone</h2></td>
-        </tr>
-	<tr>
-	<td><p><a href="tel:1-703-901-1798">(703) 901 - 1798</a></p><br><div class="breakline"</div></td>
-        </tr>
-	</table>
-
-	<table>
-	<tr>
-	<td><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/573cfbd2a3360ca47247b489/1463614420157/contact_mail.png?format=750w"/></td>
-        </tr>
-	<tr>
-	<td><h2>Email</h2></td>
-        </tr>
-	<tr>
-	<td><p><a href="mailto:w.rust.152@gmail.com">w.rust.152@gmail.com</a></p><br><div class="breakline"</div></td>
-        </tr>
-	</table>
-	</div>
-
-</div>   
-</div> 
+<div class="clients fadeindown" id="clients">
+		<div class="clients-wrapper">
+			<div class="clients-container">
+				<h2>Clients</h2>
+				<div class="clients-text">
+				
+				<p><span>Asics</span> - <a href="http://www.asics.com">www.asics.com</a></p>
+				<p><span>Adorama</span> - <a href="http://www.adorama.com">www.adorama.com</a></p>
+				<p><span>Alexander Wang</span> - <a href="http://www.alexanderwang.com/us">www.aw.com</a></p>
+				<p><span>Beats By Dre</span> - <a href="http://www.beatsbydre.com">www.beatsbydre.com</a></p>
+				<p><span>Best Buy</span> - <a href="http://www.bestbuy.com">www.bestbuy.com</a></p>
+				<p><span>Burton</span> - <a href="http://www.burton.com">www.burton.com</a></p>
+				<p><span>Calvin Klein</span> - <a href="http://www.calvinklein.us">www.calvinklein.us</a></p>
+				<p><span>Canon</span> - <a href="http://www.canon.com">www.canon.com</a></p>
+				<p><span>Filson</span> - <a href="http://www.filson.com">www.filson.com</a></p>
+				<p><span>Cinema Now</span> - <a href="http://www.cinemanow.com">www.cinemanow.com</a></p>
+				<p><span>Coach</span> - <a href="http://www.coach.com">www.coach.com</a></p>
+				<p><span>Delta</span> - <a href="http://www.delta.com">www.delta.com</a></p>
+				<p><span>DKNY</span> - <a href="http://www.dkny.com">www.dkny.com</a></p>
+				<p><span>Ecco</span> - <a href="http://www.ecco.com">www.ecco.com</a></p>
+				<p><span>Fairmont</span> - <a href="http://www.fairmont.com">www.fairmont.com</a></p>
+				<p><span>Fitbit</span> - <a href="http://www.fitbit.com">www.fitbit.com</a></p>
+				<p><span>Hype Beast</span> - <a href="http://www.hypebeast.com">www.hypebeast.com</a></p>
+				<p><span>Ikea</span> - <a href="http://www.ikea.com">www.ikea.com</a></p>
+				<p><span>Kimpton</span> - <a href="http://www.kimptonhotels.com">www.kimpton.com</a></p>
+				<p><span>Lego Land</span> - <a href="http://www.legoland.com">www.legoland.com</a></p>
+				<p><span>Levis</span> - <a href="http://www.levis.com">www.levis.com</a></p>
+				<p><span>Nautica</span> - <a href="http://www.nautica.com">www.nautica.com</a></p>
+				<p><span>Nike</span> - <a href="http://www.nike.com">www.nike.com</a></p>
+				<p><span>Oakley</span> - <a href="http://www.oakley.com">www.oakley.com</a></p>
+				<p><span>Panasonic</span> - <a href="http://www.panasonic.com">www.panasonic.com</a></p>
+				<p><span>Pandora</span> - <a href="http://www.pandora.net/">www.pandora.net</a></p>
+				<p><span>Polar</span> - <a href="http://www.polar.com">www.polar.com</a></p>
+				<p><span>Puma</span> - <a href="http://www.puma.com">www.puma.com</a></p>
+				<p><span>Radisson</span> - <a href="http://www.radisson.com">www.radisson.com</a></p>
+				<p><span>Redbox</span> - <a href="http://www.redbox.com">www.redbox.com</a></p>
+				<p><span>Reebok</span> - <a href="http://www.reebok.com">www.reebok.com</a></p>
+				<p><span>Rhapsody</span> - <a href="http://www.rhapsody.com">www.rhapsody.com</a></p>
+				<p><span>Showtime</span> - <a href="http://www.showtime.com">www.showtime.com</a></p>
+				<p><span>Southwest</span> - <a href="http://www.southwest.com">www.southwest.com</a></p>
+				<p><span>Swatch</span> - <a href="http://www.swatch.com">www.swatch.com</a></p>
+				<p><span>Spartan Race</span> - <a href="http://www.spartan.com">www.spartan.com</a></p>
+				<p><span>Under Armour</span> - <a href="http://www.underarmour.com">www.ua.com</a></p>
+				<p><span>Versace</span> - <a href="http://www.versace.com">www.versace.com</a></p>
+				<p><span>Zip Car</span> - <a href="http://www.zipcar.com">www.zipcar.com</a></p>
+				</div>
+			</div>
+		</div>
 </div>
 
 
 
+<div class="contact fadeindown" id="contact">
+		<div class="contact-wrapper">
+			<div class="contact-container">
+				<div class="contact-text">
+				<h2>Contact Me</h2>
+					<div class="phone inline">
+						<a href="tel:7039011798" target="_blank"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/588290d8197aeadee07b83e1/1484951768879/Phone_150x150.gif" width="150" border="none" alt=""></a>
+						<h3>Phone</h3>
+						<a href="tel:7039011798" target="_blank">(703) 901 - 1798</a>
+					</div>
+					<div class="email inline">
+						<a href="mailto:w.rust.152@gmail.com"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/588290d7ff7c50565777f687/1484951767945/Email_150x150.gif" width="150" border="none" alt=""></a>
+						<h3>Phone</h3>
+						<a href="mailto:w.rust.152@gmail.com">w.rust.152@gmail.com</a>
+					</div>
+					<div class="instagram inline">
+						<a href="https://www.instagram.com/will.rust/" target="_blank"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/588290d71b631b43965ee7fd/1484951768767/IG_150x150.gif" width="150" border="none" alt=""></a>
+						<h3>Instagram</h3>
+						<a href="https://www.instagram.com/will.rust/">will.rust</a>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+<div class="gradientfooter"></div>
+</div>
 </body>
 </html>

@@ -2,10 +2,14 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Will Rust - Resume</title>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i|Oswald:300,400,700" rel="stylesheet">
 <style>
+@-ms-viewport{
+  width: device-width;
+}
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i|Oswald:300,400,700');
 	
 html {
@@ -40,7 +44,6 @@ p {
 	color: #FFFFFF;
 	-webkit-font-smoothing: antialiased;
 }
-
 h1 {
 	font-family: 'Playfair Display', sans-serif;
 	margin:0px;
@@ -51,7 +54,6 @@ h1 {
 	text-align:center;
 	-webkit-font-smoothing: antialiased;
 }
-
 h2 {
 	font-family: 'Playfair Display', sans-serif;
 	margin:0px;
@@ -62,7 +64,6 @@ h2 {
 	text-align:center;
 	-webkit-font-smoothing: antialiased;
 }
-
 h3 {
 	font-family: 'Playfair Display', sans-serif;
 	margin:30px 0px 10px 0px;
@@ -73,11 +74,9 @@ h3 {
 	text-align:center;
 	-webkit-font-smoothing: antialiased;
 }
-
 /******************************************************/
 /************************HEADER************************/
 /******************************************************/
-
 .header{
     width: 100%;
 	max-width: 1200px; /* must match site width */
@@ -87,26 +86,22 @@ h3 {
 	top: 0px;
 	overflow:hidden;
 }
-
 .header_logo{
     float: left;
     max-width: 105px;
     padding: 20px 0px 0px 20px;
 }
-
 .header_spacer{
     height: 100px;
 }
 	
 	
 /********************NAVIGATION*******************/
-
 .navigation{
 	width:100%;
 	height: auto;
 	text-align: center;
 }
-
 	.navigation-content {
 	font-family: sans-serif;
 	width: 60%;
@@ -120,7 +115,6 @@ h3 {
 .navigation-input {
     display: none;
 } /*Hide input element*/
-
 .navigation-content {
 	transition: .5s cubic-bezier(.5,0,.5,1);
 }
@@ -159,34 +153,25 @@ h3 {
               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               opacity 0.55s ease;
 }
-
 .navigation-label:hover {
 	opacity: .5;
 }
 	
-
-
 .navigation-input:checked + .navigation-label span
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
 }
-
 .navigation-input:checked + .navigation-label span:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
-
 .navigation-input:checked + .navigation-label span:nth-last-child(2)
 {
   opacity: 1;
   transform: rotate(-45deg) translate(0, -1px);
 }
-
-
-
-
 	
 .navigation a {
 	font-family: 'Playfair Display', sans-serif;
@@ -207,31 +192,24 @@ h3 {
 .navigation a:hover {
 	opacity: .5;
 }
-
-
 /********************************************************/
 /*************************Hero***************************/
 /********************************************************/
-
 .banner-wrapper{
 	width: 100%;
 	position: relative;
 }
-
 .mobilebanner{
 	display:none;
 }
-
 .clouds-mid{
 	position: absolute;
 	top: 0px;
 }
-
 .clouds-front{
 	position:absolute;
 	top: 0px;
 }
-
 .banner .text {
 	position: absolute;
 	width: 100%;
@@ -247,29 +225,22 @@ h3 {
 	text-align:center;
 	-webkit-font-smoothing: antialiased;
 }
-
 .banner .text span{
 	opacity: 0;
 }
-
 #front.#back{
 	opacity: .65;
 }
-
 .shaka{
 	position:absolute;
 	bottom: -100px;
 	left: 50%;
 	margin-left: -39px;
 }
-
-
-
 	
 /*****************************************************/
 /************************ABOUT************************/
 /*****************************************************/
-
 	
 .about-wrapper{
 	max-width: 650px;
@@ -279,40 +250,31 @@ h3 {
 	padding: 0px 40px 0px 40px;
 	text-align: center;
 }	
-
 .about-wrapper p{
 	margin: 40px 0px 0px 0px;
 }
-
 .about-wrapper a {
 	color: #fa6465;
 	text-decoration: none;
 }
-
 .about-wrapper a:hover {
 	text-decoration: underline;
 }
-
 .about-wrapper span {
 	font-size:12px;
 	line-height:15px;
 	font-style:italic;
 }
-
 /********************************************************/
 /***********************EXPERIENCE***********************/
 /********************************************************/
-
 .experience{
 	clear: both;
 	position: static;
 }
-
 .experience h1{
 	margin: 0px 0px 30px 0px
 }
-
-
 	
 .experience-wrapper{
 	width: 70%;
@@ -351,8 +313,6 @@ h3 {
 	.experience-text{
 	padding: 80px;
 }
-
-
 	.hideshow{
 		width: 100%;
 	}
@@ -396,7 +356,6 @@ h3 {
 	color: #FFFFFF;
 	-webkit-font-smoothing: antialiased;
 }
-
 	.content1{
 		
 	}
@@ -409,7 +368,6 @@ h3 {
 	.content4{
 		
 	}
-
 	.hideshow label div{
 		display: inline-block;
 		width: 24%;
@@ -420,7 +378,6 @@ h3 {
 	.hideshow label div:hover{
 		opacity: 1;
 	}
-
 #slide1:checked ~ .hideshow-content {       
 	left: 0%;
 }
@@ -457,8 +414,6 @@ h3 {
 	#slide4:checked ~ label .label4 {       
 	opacity:1;
 }
-
-
 .hideshow label .label1{       
 	width: 24%
 }
@@ -471,18 +426,12 @@ h3 {
 .hideshow label .label4{       
 	width: 12%
 }
-
 .hideshow label img{       
 	height: 30px;
 }
-
-
-
-
 .xxxxhideshow ul{
 	padding-left: 10px;
 }
-
 .hideshow li{
 	font-family: 'Crimson Text', serif;
 	margin:0px;
@@ -493,7 +442,6 @@ h3 {
 	color: #FFFFFF;
 	-webkit-font-smoothing: antialiased;
 }
-
 .hideshow li a{
 	color: #fa6465;
 }
@@ -502,7 +450,6 @@ h3 {
 /*******************************************************/
 /***********************PORTFOLIO***********************/
 /*******************************************************/
-
 .portfolio{
 	clear: both;
 	position: static;
@@ -545,10 +492,7 @@ h3 {
 	padding: 80px;
 	text-align:center;
 }
-
-
 /*---Slider---*/
-
 #portfolio-slideshow-wrap {
     display: block;
     width: 100%;
@@ -560,14 +504,12 @@ h3 {
 -moz-box-shadow: 0px 30px 100px -30px rgba(0,0,0,0.4);
 box-shadow: 0px 30px 100px -30px rgba(0,0,0,0.4);
 }
-
 #portfolio-slideshow-inner {
     width: 100%;
     height: 100%;
     overflow: hidden;
     position: relative;
 }
-
 #portfolio-slideshow-inner>ul {
     list-style: none;
     padding: 0px;
@@ -582,18 +524,15 @@ box-shadow: 0px 30px 100px -30px rgba(0,0,0,0.4);
     -o-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
     transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
 }
-
 #portfolio-slideshow-inner>ul>li {
     width: 25%;
     float: left;
     position: relative;
 }
-
 #portfolio-slideshow-inner>ul>li>img {
     margin: auto;
     height: 100%;
 }
-
 #portfolio-slideshow-wrap input[type=radio] {
     position: absolute;
     left: 50%;
@@ -601,7 +540,6 @@ box-shadow: 0px 30px 100px -30px rgba(0,0,0,0.4);
     z-index: 100;
     visibility: hidden;
 }
-
 #portfolio-slideshow-wrap label:not(.portfolio-arrows):not(.portfolio-show-description-label) {
     position: absolute;
     left: 50%;
@@ -618,33 +556,19 @@ box-shadow: 0px 30px 100px -30px rgba(0,0,0,0.4);
     border:1px solid #ccc;
     display:none;
 }
-
 #portfolio-slideshow-wrap label:not(.portfolio-arrows):active { bottom: -41px }
-
 #portfolio-slideshow-wrap input[type=radio]#portfolio-button-1:checked~label[for=portfolio-button-1] { background-color: #ccc;}
-
 #portfolio-slideshow-wrap input[type=radio]#portfolio-button-2:checked~label[for=portfolio-button-2] { background-color: #ccc;}
-
 #portfolio-slideshow-wrap input[type=radio]#portfolio-button-3:checked~label[for=portfolio-button-3] { background-color: #ccc;}
-
 #portfolio-slideshow-wrap input[type=radio]#portfolio-button-4:checked~label[for=portfolio-button-4] { background-color: #ccc;}
-
 #portfolio-slideshow-wrap label[for=portfolio-button-1] { margin-left: -36px }
-
 #portfolio-slideshow-wrap label[for=portfolio-button-2] { margin-left: -18px }
-
 #portfolio-slideshow-wrap label[for=portfolio-button-3] { margin-left: -0px }
-
 #portfolio-slideshow-wrap label[for=portfolio-button-4] { margin-left: 18px }
-
 #portfolio-slideshow-wrap input[type=radio]#portfolio-button-1:checked~#portfolio-slideshow-inner>ul { left: 0 }
-
 #portfolio-slideshow-wrap input[type=radio]#portfolio-button-2:checked~#portfolio-slideshow-inner>ul { left: -100% }
-
 #portfolio-slideshow-wrap input[type=radio]#portfolio-button-3:checked~#portfolio-slideshow-inner>ul { left: -200% }
-
 #portfolio-slideshow-wrap input[type=radio]#portfolio-button-4:checked~#portfolio-slideshow-inner>ul { left: -300% }
-
 label.portfolio-arrows {
     font-family: 'WebSymbolsRegular';
     font-weight: bold;
@@ -660,16 +584,12 @@ label.portfolio-arrows {
     z-index: 1000;
 	transition: .3s ease-in-out;
 }
-
 label.portfolio-arrows:hover { opacity: 1;}
-
 label.portfolio-arrows:active { margin-top: -23px }
-
     input[type=radio]#portfolio-button-1:checked~.portfolio-arrows#portfolio-arrow-2, input[type=radio]#portfolio-button-2:checked~.portfolio-arrows#portfolio-arrow-3, input[type=radio]#portfolio-button-3:checked~.portfolio-arrows#portfolio-arrow-4,input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-1 {
     right: -43px;
     display: block;
     }
-
     input[type=radio]#portfolio-button-2:checked~.portfolio-arrows#portfolio-arrow-1, input[type=radio]#portfolio-button-3:checked~.portfolio-arrows#portfolio-arrow-2, input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3, input[type=radio]#portfolio-button-1:checked~.portfolio-arrows#portfolio-arrow-4 {
     left: -61px;
     display: block;
@@ -679,47 +599,33 @@ label.portfolio-arrows:active { margin-top: -23px }
     -o-transform: scaleX(-1);
     transform: scaleX(-1);
     }
-
 input[type=radio]#portfolio-button-2:checked~.portfolio-arrows#portfolio-arrow-1 { left: -7px }
-
 input[type=radio]#portfolio-button-3:checked~.portfolio-arrows#portfolio-arrow-2 { left: -25px }
-
 input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3 { left: -43px }
-
 #portfolio-slideshow-inner>ul>li:hover .description label { opacity: 1 }
-
-
 /*---Slides---*/
-
 .portfolio-slide-content a:hover{
  opacity: .5;
  transition: .5s ease-in-out;
 }
-
 .portfolio-slide-content table{
   padding:20px;
   margin: auto;
 }
-
 .portfolio-slide-content td{
   text-align: center;
   margin: auto;
   padding: 0;
   margin: 0;
 }
-
 .portfolio-slide-content img{
   width: 100%;
   margin: auto;
-
 }
-
 .portfolio-slide-content ul{
 list-style-type: disc;
 }
-
 /*---CTA---*/
-
 .cta_fullportfolio{
     font-family: 'Playfair Display', sans-serif
     font-size;18px;
@@ -734,14 +640,12 @@ list-style-type: disc;
     padding: 12px 40px;
     transition: .3s ease-in-out;
 }
-
 .cta_fullportfolio:hover{
     color: #FFFFFF;
     background-color: #fa6465;
     border: 1px solid #fa6465; 
 }
 	
-
 /*****************************************************/
 /***********************CLIENTS***********************/
 /*****************************************************/
@@ -774,20 +678,17 @@ list-style-type: disc;
 .clients-container h2{
 	margin: 0px 0px 80px 0px;
 }
-
 .clients-text p{
 	width:30%;
 	display: inline-block;
 	text-align:left;
 }
-
 .clients-text p span{
 	font-size:16px;
 	line-height:18px;
 	font-weight: 700;
 	color: #fa6465;
 }
-
 .clients-text a{
 	color: #FFFFFF;
 	text-decoration: none;
@@ -818,11 +719,9 @@ list-style-type: disc;
 	height: auto;
 	padding: 0px;
 }
-
 .contact-container .contact-text{
 	text-align:center;
 }
-
 .contact-container .inline{
 	width: 32%;
 	text-align: center;
@@ -830,7 +729,6 @@ list-style-type: disc;
 	margin: 0 auto;
 	display: inline-block;
 }
-
 .contact-container .inline a {
 	font-family: 'Crimson Text', serif;
 	margin:0px;
@@ -842,17 +740,12 @@ list-style-type: disc;
 	text-decoration:none;
 	-webkit-font-smoothing: antialiased;
 }
-
 .contact-container .inline a:hover {
 	text-decoration:underline;
 }
-
-
-
 /*****************************************************/
 /***********************FOOTER************************/
 /*****************************************************/
-
 .gradientfooter{
 width: 100%;
 height: 10px;
@@ -866,23 +759,17 @@ background: linear-gradient(to right, rgba(33,42,61,1) 0%, rgba(42,49,64,1) 50%,
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#212a3d', endColorstr='#212a3d', GradientType=1 );
 }
 	
-
 /********************************************************/
 /***********************MOBILE CSS***********************/
 /********************************************************/
-
 @media screen and (max-width: 1200px) {
-
 .banner .text{
 	font-size:22vw;
 	line-height:22vw;
 	right: 10%;
 }
 }
-
 @media screen and (max-width: 960px) {
-
-
 .vanish { 
 display: none !important;
 }
@@ -892,7 +779,6 @@ width: 100% !important;
 max-width: 100% !important; 
 height: auto !important; 
 }
-
 /********************************************************/
 /***********************EXPERIENCE***********************/
 /********************************************************/
@@ -901,7 +787,6 @@ height: auto !important;
 	width: 80%;
 	margin: 150px auto 150px auto;
 }		
-
 .experience-text{
 	padding: 80px 40px 80px 40px;
 }	
@@ -914,53 +799,36 @@ height: auto !important;
 	width: 80%;
 	margin: 150px auto 150px auto;
 }	
-
 	
 .portfolio-text{
 	padding: 80px 80px 80px 80px;
 }
-
-
 /*****************************************************/
 /***********************CLIENTS***********************/
 /*****************************************************/
-
-
 .clients-text{
 	padding: 0px 0px 0px 10%
 }
-
 .clients-text p{
 	width:43%;
 	display: inline-block;
 	text-align:left;
 }
-
 /*****************************************************/
 /***********************CONTACT***********************/
 /*****************************************************/
-
 .contact-container .inline{
 	width: 48%;
 }
-
-
 }
-
-
 @media screen and (max-width: 520px) {
-
 h1 {
 	font-size:36px;
 	line-height:40px;
 }
-
-
 /********************************************************/
 /***********************NAVIGATION***********************/
 /********************************************************/
-
-
 	.navigation-content {
 	font-family: sans-serif;
 	width: 80%;
@@ -971,32 +839,25 @@ h1 {
 	box-sizing: border-box;
 	text-align:left;
 }
-
 .navigation a {
 	font-size:22px;
 	line-height:60px;
 }
-
 /********************************************************/
 /***********************BANNER***************************/
 /********************************************************/
-
 .clouds-back{
 	display:none;
 }
-
 .clouds-mid{
 	display:none;
 }
-
 .clouds-front{
 	display:none;
 }
-
 .banner .text{
 	display:none;
 }
-
 .mobilebanner{
 	display:block;
 }
@@ -1009,19 +870,16 @@ h1 {
 	width: 100%;
 	margin: 150px auto 150px auto;
 }		
-
 .experience-container{
 	-webkit-box-shadow: 15px 15px 30px -10px rgba(0,0,0,0.9);
 	-moz-box-shadow: 15px 15px 30px -10px rgba(0,0,0,0.9);
 	box-shadow: 15px 15px 30px -10px rgba(0,0,0,0.9);
 }
-
 .experience-line{
 	border: 2px solid #f35d5e;
 	top: 30px;
 	left: 30px;
 }
-
 .experience-text{
 	padding: 60px 20px 60px 20px;
 }	
@@ -1051,7 +909,6 @@ h1 {
 	width: 100%;
 	margin: 150px auto 300px auto;
 }	
-
 .portfolio-container{
 	-webkit-box-shadow: 15px 15px 30px -10px rgba(0,0,0,0.9);
 	-moz-box-shadow: 15px 15px 30px -10px rgba(0,0,0,0.9);
@@ -1067,12 +924,10 @@ h1 {
 .portfolio-text{
 	padding: 60px 20px 60px 20px;
 }
-
 #portfolio-slideshow-wrap {
     margin-top: 80px;
     margin-bottom: 120px;
 }
-
 label.portfolio-arrows {
 	width: 20px;
     color: #fa6465;
@@ -1081,32 +936,19 @@ label.portfolio-arrows {
     margin-top: 0px;
     display: none;
 }
-
-
     input[type=radio]#portfolio-button-1:checked~.portfolio-arrows#portfolio-arrow-2, input[type=radio]#portfolio-button-2:checked~.portfolio-arrows#portfolio-arrow-3, input[type=radio]#portfolio-button-3:checked~.portfolio-arrows#portfolio-arrow-4,input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-1 {
     right: 30%;
     }
-
     input[type=radio]#portfolio-button-2:checked~.portfolio-arrows#portfolio-arrow-1, input[type=radio]#portfolio-button-3:checked~.portfolio-arrows#portfolio-arrow-2, input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3, input[type=radio]#portfolio-button-1:checked~.portfolio-arrows#portfolio-arrow-4 {
     left: 30%;
     }
-
 input[type=radio]#portfolio-button-2:checked~.portfolio-arrows#portfolio-arrow-1 { left: 30%;}
-
 input[type=radio]#portfolio-button-3:checked~.portfolio-arrows#portfolio-arrow-2 { left: 30%;}
-
 input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3 { left: 30%; }
-
-
 #portfolio-slideshow-wrap label[for=portfolio-button-1] { margin-left: 0px }
-
 #portfolio-slideshow-wrap label[for=portfolio-button-2] { margin-left: 0px }
-
 #portfolio-slideshow-wrap label[for=portfolio-button-3] { margin-left: 0px }
-
 #portfolio-slideshow-wrap label[for=portfolio-button-4] { margin-left: 0px }
-
-
 /*****************************************************/
 /***********************CLIENTS***********************/
 /*****************************************************/
@@ -1119,23 +961,17 @@ input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3
 .clients-text{
 	padding: 0px 0px 0px 0px;
 }
-
 /*****************************************************/
 /***********************CONTACT***********************/
 /*****************************************************/
-
 .contact-container .inline{
 	width: 100%;
 }
-
 .contact-wrapper{
 	margin: 300px auto 200px auto;
 }
 	
 }
-
-
-
 .fadeindown{
   animation: fadeindown ease 1.5s;
   animation-iteration-count: 1;
@@ -1158,32 +994,26 @@ input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3
   -ms-transform-origin: 50% 50%;
   -ms-animation-fill-mode:forwards; /*IE 10+*/
 }
-
 @keyframes fadeindown{
   0% {opacity:0;transform:  translate(0px,-25px)  ;}
   100% {opacity:1;transform:  translate(0px,0px)  ;}
 }
-
 @-moz-keyframes fadeindown{
   0% {opacity:0;-moz-transform:  translate(0px,-25px)  ;}
   100% {opacity:1;-moz-transform:  translate(0px,0px)  ;}
 }
-
 @-webkit-keyframes fadeindown {
   0% {opacity:0;-webkit-transform:  translate(0px,-25px)  ;}
   100% { opacity:1; -webkit-transform:  translate(0px,0px)  ; }
 }
-
 @-o-keyframes fadeindown {
   0% { opacity:0; -o-transform:  translate(0px,-25px)  ;}
   100% {  opacity:1; -o-transform:  translate(0px,0px)  ;}
 }
-
 @-ms-keyframes fadeindown {
   0% { opacity:0; -ms-transform:  translate(0px,-25px)  ;}
   100% {  opacity:1;  -ms-transform:  translate(0px,0px)  ;}
 }
-
 .fadeinup{
   animation: fadeinup ease 2.5s;
   animation-iteration-count: 1;
@@ -1206,37 +1036,31 @@ input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3
   -ms-transform-origin: 50% 50%;
   -ms-animation-fill-mode:forwards; /*IE 10+*/
 }
-
 @keyframes fadeinup{
   0% {opacity:0;transform:  translate(0px,150px)  ;}
   20% {opacity:0;transform:  translate(0px,150px)  ;}
   100% {opacity:.65;transform:  translate(0px,0px)  ;}
 }
-
 @-moz-keyframes fadeinup{
   0% {opacity:0;-moz-transform:  translate(0px,150px)  ;}
   20% {opacity:0;-moz-transform:  translate(0px,150px)  ;}
   100% {opacity:.65;-moz-transform:  translate(0px,0px)  ;}
 }
-
 @-webkit-keyframes fadeinup {
   0% {opacity:0;-webkit-transform:  translate(0px,150px)  ;}
   20% {opacity:0;-webkit-transform:  translate(0px,150px)  ;}
   100% { opacity:.65; -webkit-transform:  translate(0px,0px)  ; }
 }
-
 @-o-keyframes fadeinup {
   0% { opacity:0; -o-transform:  translate(0px,150px)  ;}
   20% { opacity:0; -o-transform:  translate(0px,150px)  ;}
   100% {  opacity:.65; -o-transform:  translate(0px,0px)  ;}
 }
-
 @-ms-keyframes fadeinup {
   0% { opacity:0; -ms-transform:  translate(0px,150px)  ;}
   20% { opacity:0; -ms-transform:  translate(0px,150px)  ;}
   100% {  opacity:.65;  -ms-transform:  translate(0px,0px)  ;}
 }
-
 .fadedownback{
   animation: fadedownback ease 2s;
   animation-iteration-count: 1;
@@ -1259,32 +1083,26 @@ input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3
   -ms-transform-origin: 50% 50%;
   -ms-animation-fill-mode:forwards; /*IE 10+*/
 }
-
 @keyframes fadedownback{
   0% { transform:  translate(0px,-25px)  ;}
   100% { transform:  translate(0px,0px)  ;}
 }
-
 @-moz-keyframes fadedownback{
   0% { -moz-transform:  translate(0px,-25px)  ;}
   100% { -moz-transform:  translate(0px,0px)  ;}
 }
-
 @-webkit-keyframes fadedownback {
   0% { -webkit-transform:  translate(0px,-25px)  ;}
   100% {  -webkit-transform:  translate(0px,0px)  ; }
 }
-
 @-o-keyframes fadedownback {
   0% {  -o-transform:  translate(0px,-25px)  ;}
   100% {  -o-transform:  translate(0px,0px)  ;}
 }
-
 @-ms-keyframes fadedownback {
   0% { -ms-transform:  translate(0px,-25px)  ;}
   100% {  -ms-transform:  translate(0px,0px)  ;}
 }
-
 .fadedownmid{
   animation: fadedownmid ease 2s;
   animation-iteration-count: 1;
@@ -1307,32 +1125,26 @@ input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3
   -ms-transform-origin: 50% 50%;
   -ms-animation-fill-mode:forwards; /*IE 10+*/
 }
-
 @keyframes fadedownmid{
   0% { transform:  translate(0px,-45px)  ;}
   100% { transform:  translate(0px,0px)  ;}
 }
-
 @-moz-keyframes fadedownmid{
   0% { -moz-transform:  translate(0px,-45px)  ;}
   100% { -moz-transform:  translate(0px,0px)  ;}
 }
-
 @-webkit-keyframes fadedownmid {
   0% { -webkit-transform:  translate(0px,-45px)  ;}
   100% {  -webkit-transform:  translate(0px,0px)  ; }
 }
-
 @-o-keyframes fadedownmid {
   0% {  -o-transform:  translate(0px,-45px)  ;}
   100% {  -o-transform:  translate(0px,0px)  ;}
 }
-
 @-ms-keyframes fadedownmid {
   0% { -ms-transform:  translate(0px,-45px)  ;}
   100% {  -ms-transform:  translate(0px,0px)  ;}
 }
-
 .fadedownfront{
   animation: fadedownfront ease 2s;
   animation-iteration-count: 1;
@@ -1355,32 +1167,26 @@ input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3
   -ms-transform-origin: 50% 50%;
   -ms-animation-fill-mode:forwards; /*IE 10+*/
 }
-
 @keyframes fadedownfront{
   0% { transform:  translate(0px,-65px)  ;}
   100% { transform:  translate(0px,0px)  ;}
 }
-
 @-moz-keyframes fadedownfront{
   0% { -moz-transform:  translate(0px,-65px)  ;}
   100% { -moz-transform:  translate(0px,0px)  ;}
 }
-
 @-webkit-keyframes fadedownfront {
   0% { -webkit-transform:  translate(0px,-65px)  ;}
   100% {  -webkit-transform:  translate(0px,0px)  ; }
 }
-
 @-o-keyframes fadedownfront {
   0% {  -o-transform:  translate(0px,-65px)  ;}
   100% {  -o-transform:  translate(0px,0px)  ;}
 }
-
 @-ms-keyframes fadedownfront {
   0% { -ms-transform:  translate(0px,-65px)  ;}
   100% {  -ms-transform:  translate(0px,0px)  ;}
 }
-
 	
 </style>
 </head>
@@ -1676,7 +1482,6 @@ $window.on('mousemove', function(event){
     transY = (event.pageY/$window.height()*50);
     $front.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
 });
-
 $window.on('mousemove', function(event){    
     rotation = (event.pageX/$window.width()*5);
     transX = (event.pageX/$window.width()*120);
@@ -1684,7 +1489,6 @@ $window.on('mousemove', function(event){
     $back.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
 });
 });//]]> 
-
 </script>
 
 

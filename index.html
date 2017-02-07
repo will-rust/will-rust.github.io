@@ -214,7 +214,7 @@ h3 {
 	position: absolute;
 	width: 100%;
 	top: 15%;
-	right: 5%;
+	right: 0%;
 	font-family: 'Oswald', sans-serif;
 	font-size:22vw;
 	font-size: 300px;
@@ -766,7 +766,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#212a3d', end
 .banner .text{
 	font-size:22vw;
 	line-height:22vw;
-	right: 10%;
+	right: 0%;
 }
 }
 @media screen and (max-width: 960px) {
@@ -1478,15 +1478,10 @@ var $window = $(window),
 	
 $window.on('mousemove', function(event){    
     rotation = (event.pageX/$window.width()*5);
-    transX = (event.pageX/$window.width()*120);
+    transX = (($window.width()/2)-event.pageX)/10;
     transY = (event.pageY/$window.height()*50);
     $front.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
-});
-$window.on('mousemove', function(event){    
-    rotation = (event.pageX/$window.width()*5);
-    transX = (event.pageX/$window.width()*120);
-    transY = (event.pageY/$window.height()*-50);
-    $back.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
+		$back.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
 });
 });//]]> 
 </script>

@@ -1481,7 +1481,13 @@ $window.on('mousemove', function(event){
     transX = (($window.width()/2)-event.pageX)/10;
     transY = (event.pageY/$window.height()*50);
     $front.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
-		$back.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
+  
+});
+$window.on('mousemove', function(event){    
+    rotation = (event.pageX/$window.width()*5);
+    transX = (($window.width()/2)-event.pageX)/9;
+    transY = (event.pageY/$window.height()*40);
+    $back.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
 });
 });//]]> 
 </script>

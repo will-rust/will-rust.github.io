@@ -1479,14 +1479,14 @@ var $window = $(window),
 $window.on('mousemove', function(event){    
     rotation = (event.pageX/$window.width()*5);
     transX = (($window.width()/2)-event.pageX)/10;
-    transY = (event.pageY/$window.height()*50);
+    transY = (event.pageY/$window.height()*-50);
     $front.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
   
 });
 $window.on('mousemove', function(event){    
     rotation = (event.pageX/$window.width()*5);
     transX = (($window.width()/2)-event.pageX)/8;
-    transY = (event.pageY/$window.height()*80);
+    transY = (event.pageY/$window.height()*-80);
     $back.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
 });
 });//]]> 

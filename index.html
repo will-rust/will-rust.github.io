@@ -1485,8 +1485,8 @@ $window.on('mousemove', function(event){
 });
 $window.on('mousemove', function(event){    
     rotation = (event.pageX/$window.width()*5);
-    transX = (($window.width()/2)-event.pageX)/9;
-    transY = (event.pageY/$window.height()*40);
+    transX = (($window.width()/2)-event.pageX)/8;
+    transY = (event.pageY/$window.height()*80);
     $back.css('transform', 'perspective( 600px ) rotateY(' + rotation + 'deg) translateX(' + transX + 'px) translateY(' + transY + 'px)');
 });
 });//]]> 

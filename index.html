@@ -265,6 +265,9 @@ h3 {
 	line-height:15px;
 	font-style:italic;
 }
+
+
+
 /********************************************************/
 /***********************EXPERIENCE***********************/
 /********************************************************/
@@ -313,137 +316,132 @@ h3 {
 	.experience-text{
 	padding: 80px;
 }
-	.hideshow{
-		width: 100%;
-	}
 	
-.hideshow { width: 100%; overflow: hidden; margin: auto; margin-top: 0px; }
-.hideshow-content .slide { width: 25%; height: auto; float: left; opacity: 0;transition: 1.5s ease-in-out;}
-.hideshow-content { 
-  position: relative;
-  width: 400%;
-  margin: 10px 0px 0px 0px;
-  left: 0;
-  text-align: left;
-  font-size: 0;
-  animation: 10s slide-motion infinite; 
-	transition: 1s ease-in-out;
-}
-	
-.hideshow input[type="radio"] {
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-}
-	
-.hideshow-content .slide {
+.carousel  span{
 	font-family: 'Crimson Text', serif;
-	margin: 20px 0px 0px 0px;
+	margin:0px;
+	padding:0px;
+	font-size:14px;
+	line-height:18px;
+	font-weight: 500;
+	color: #FFFFFF;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+.carousel  label img{       
+	height: 30px;
+}
+
+.carousel li{
+	font-family: 'Crimson Text', serif;
+	margin:0px;
+	padding:0px;
+	font-size:14px;
+	line-height:18px;
+	font-weight: 500;
+	color: #FFFFFF;
+	-webkit-font-smoothing: antialiased;
+}
+.carousel li a{
+	color: #fa6465;
+}
+	
+	
+.carousel{
+text-align:center;
+width: 100%;
+font-family: 'Crimson Text', serif;
 	font-size:18px;
 	line-height:18px;
 	font-weight: 500;
 	color: #FFFFFF;
 	-webkit-font-smoothing: antialiased;
-	}
+}
+
+.carousel  a.btn {
+	display: inline-block;
+	text-decoration: none;
+	padding: 10px 20px 10px 20px;
+	transition: .2s ease-in-out;
+	opacity: .6;
+}
+.carousel .btn:hover {
+	opacity: 1;
+}
+
+.carousel a.checked {
+	display: inline-block;
+	text-decoration: none;
+	padding: 10px 20px 10px 20px;
+	transition: .2s ease-in-out;
+	opacity: 1;
+}
+.carousel .checked:hover {
+	opacity: 1;
+}
 	
-.hideshow-content .slide span{
-	font-family: 'Crimson Text', serif;
-	margin:0px;
-	padding:0px;
-	font-size:14px;
-	line-height:18px;
-	font-weight: 500;
-	color: #FFFFFF;
-	-webkit-font-smoothing: antialiased;
-}
-	.content1{
-		
-	}
-	.content2{
-		
-	}
-	.content3{
-		
-	}
-	.content4{
-		
-	}
-	.hideshow label div{
-		display: inline-block;
-		width: 24%;
-		text-align: center;
-		opacity: .4;
-		transition: .3s ease-in-out;
-	}
-	.hideshow label div:hover{
-		opacity: 1;
-	}
-#slide1:checked ~ .hideshow-content {       
+.carousel .slider { width: 100%; overflow: hidden; margin: 40px 0px 0px 0px; }
+.carousel .slider figure div { width:25%; height: auto; float: left;}
+.carousel .slider figure { 
+  position: relative;
+  width: 400%;
+  margin: 0;
+  text-align: left;
 	left: 0%;
+	transition: 2s  cubic-bezier(.6,0,0,1);
 }
-#slide1:checked ~ .hideshow-content .content1{       
-	opacity: 1;
+.slide1, .slide2, .slide3, .slide4{
+padding: 0px;
+text-align:left;
 }
-#slide1:checked ~ label .label1 {       
-	opacity:1;
+
+.reset{left: 0%!important;}
+.reset .slide1 {opacity: 1!important;}
+.reset .slide2, .slide3, .slide4 {opacity: 0!important;}
+.showslide1{left: 0%!important;}
+.showslide1 .slide1 {animation: fadein ease-in-out 2s; -webkit-animation: fadein ease-in-out 2s; -moz-animation: fadein ease-in-out 2s; opacity: 1!important;}
+.showslide1 .slide2, .slide3, .slide4 {animation: fadeout ease-in-out 2s; -webkit-animation: fadeout ease-in-out 2s; -moz-animation: fadeout ease-in-out 2s; opacity: 0!important;}
+.showslide2{left: -100%!important;}
+.showslide2 .slide2 {animation: fadein ease-in-out 2s; -webkit-animation: fadein ease-in-out 2s; -moz-animation: fadein ease-in-out 2s; opacity: 1!important;}
+.showslide2 .slide1, .slide3, .slide4 {animation: fadeout ease-in-out 2s; -webkit-animation: fadeout ease-in-out 2s; -moz-animation: fadeout ease-in-out 2s; opacity: 0!important;}
+.showslide3{left: -200%!important;}
+.showslide3 .slide3 {animation: fadein ease-in-out 2s; -webkit-animation: fadein ease-in-out 2s; -moz-animation: fadein ease-in-out 2s; opacity: 1!important;}
+.showslide3 .slide1, .slide2, .slide4 {animation: fadeout ease-in-out 2s; -webkit-animation: fadeout ease-in-out 2s; -moz-animation: fadeout ease-in-out 2s; opacity: 0!important;}
+.showslide4{left: -300%!important;}
+.showslide4 .slide4 {animation: fadein ease-in-out 2s; -webkit-animation: fadein ease-in-out 2s; -moz-animation: fadein ease-in-out 2s; opacity: 1!important;}
+.showslide4 .slide1, .slide2, .slide3 {animation: fadeout ease-in-out 2s; -webkit-animation: fadeout ease-in-out 2s; -moz-animation: fadeout ease-in-out 2s; opacity: 0!important;}
+
+
+@keyframes fadein{
+  0% { opacity:0;}
+	50% { opacity:0;}
+  100% { opacity:1;}
 }
-#slide2:checked ~ .hideshow-content {       
-	left: -100%;
+@-webkit-keyframes fadein{
+  0% { opacity:0;}
+	50% { opacity:0;}
+  100% { opacity:1;}
 }
-#slide2:checked ~ .hideshow-content .content2{       
-	opacity: 1;
+@-moz-keyframes fadein{
+  0% { opacity:0;}
+	50% { opacity:0;}
+  100% { opacity:1;}
 }
-#slide2:checked ~ label .label2 {       
-	opacity:1;
+@keyframes fadeout{
+  0% { opacity:1;}
+	50% { opacity:0;}
+  100% { opacity:0;}
 }
-#slide3:checked ~ .hideshow-content {       
-	left: -200%;
+@-webkit-keyframes fadeout{
+  0% { opacity:1;}
+	50% { opacity:0;}
+  100% { opacity:0;}
 }
-#slide3:checked ~ .hideshow-content .content3{       
-	opacity: 1;
-}
-	#slide3:checked ~ label .label3 {       
-	opacity:1;
-}
-#slide4:checked ~ .hideshow-content {       
-	left: -300%;
-}
-#slide4:checked ~ .hideshow-content .content4{       
-	opacity: 1;
-}
-	#slide4:checked ~ label .label4 {       
-	opacity:1;
-}
-.hideshow label .label1{       
-	width: 24%
-}
-.hideshow label .label2{       
-	width: 25%
-}
-.hideshow label .label3{       
-	width: 33%
-}
-.hideshow label .label4{       
-	width: 12%
-}
-.hideshow label img{       
-	height: 30px;
-}
-.xxxxhideshow ul{
-	padding-left: 10px;
-}
-.hideshow li{
-	font-family: 'Crimson Text', serif;
-	margin:0px;
-	padding:0px;
-	font-size:14px;
-	line-height:18px;
-	font-weight: 500;
-	color: #FFFFFF;
-	-webkit-font-smoothing: antialiased;
-}
-.hideshow li a{
-	color: #fa6465;
+@-moz-keyframes fadeout{
+  0% { opacity:1;}
+	50% { opacity:0;}
+  100% { opacity:0;}
 }
 	
 	
@@ -884,22 +882,6 @@ h1 {
 	padding: 60px 20px 60px 20px;
 }	
 	
-.hideshow label .label1{       
-	width: 48%!important;
-	padding: 0px 0px 10px 0px;
-}
-.hideshow label .label2{       
-	width: 48%!important;
-	padding: 0px 0px 10px 0px;
-}
-.hideshow label .label3{       
-	width: 48%!important;
-	padding: 0px 0px 10px 0px;
-}
-.hideshow label .label4{       
-	width: 48%!important;
-	padding: 0px 0px 10px 0px;
-}
 	
 /*******************************************************/
 /***********************PORTFOLIO***********************/
@@ -1251,24 +1233,23 @@ input[type=radio]#portfolio-button-4:checked~.portfolio-arrows#portfolio-arrow-3
 				
 				
 				
-<div class="hideshow">
-<input type="radio" name="hideshow-input" id="slide1" checked/>
-<label for="slide1" class="hideshow-label"><div class="label1"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882a562ebbd1a30e97d0432/1484957026390/exp_sc.png" border="none" alt=""></div></label> 
-<input type="radio" name="hideshow-input" id="slide2"/>
-<label for="slide2" class="hideshow-label"><div class="label2"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882a562e58c626edaf0e433/1484957026365/exp_hrx.png" border="none" alt=""></div></label> 
-<input type="radio" name="hideshow-input" id="slide3"/>
-<label for="slide3" class="hideshow-label"><div class="label3"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882a5616a49636e23cacd45/1484957026089/exp_fss.png" border="none" alt=""></div></label> 
-<input type="radio" name="hideshow-input" id="slide4"/>
-<label for="slide4" class="hideshow-label"><div class="label4"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882a561bf629a055adf9e6d/1484957026087/exp_gmu.png" border="none" alt=""></div></label> 
-<div role="hideshow" id="hideshowID" class="hideshow-content">
-<div class="slide content1">
-Enterprise Designer and Front End Developer  (2015-Present)<br>
+<div class="carousel">
+
+<a id="tab1" onClick="showSlide1()" class="checked" href="javascript:void(0);"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882a562ebbd1a30e97d0432/1484957026390/exp_sc.png" height="30" border="none" alt=""></a>
+<a id="tab2" onClick="showSlide2()" class="btn" href="javascript:void(0);"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882a562e58c626edaf0e433/1484957026365/exp_hrx.png" height="30" border="none" alt=""></a>
+<a id="tab3" onClick="showSlide3()" class="btn" href="javascript:void(0);"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882a5616a49636e23cacd45/1484957026089/exp_fss.png" height="30" border="none" alt=""></a>
+<a id="tab4" onClick="showSlide4()" class="btn" href="javascript:void(0);"><img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/5882a561bf629a055adf9e6d/1484957026087/exp_gmu.png" height="30" border="none" alt=""></a>
+
+<div class="slider">
+<figure id="slides" class="reset">
+<div class="slide1">
+	Enterprise Designer and Front End Developer  (2015-Present)<br>
 <ul>
 <li>Design and build on-site and email re-marketing visuals for many of the <a href="#clients">largest ecommerce retailers</a> in the United States.</li>
 <li>Cultivate re-marketing strategies based on client initiatives and objectives.</li>
 <li>Restructure internal business processes to streamline and stabilize operations during rapid expansion.</li>
 <li>Initiate A/B testing effort, facilitating customer acquisition and boosting customer retention.</li>
-<li>Developed and directed all data management and data analytics to generate relevant and actionable data for all internal US teams. 
+<li>Developed and directed all data management and data analytics to generate relevant and actionable data for all internal US teams. </li>
 <li>Support business development and marketing teams with client acquisition and strategy development.</li>
 <li>Consult client design and marketing teams to clarify objectives and demonstrate value to ultimately meet client requirements and drive conversion.</li>
 <li>Utilize advanced problem solving skills to debug and repair broken templates under business critical deadlines.</li>
@@ -1277,8 +1258,8 @@ Enterprise Designer and Front End Developer  (2015-Present)<br>
 <li>Assume primary copywrighting role for all implementations and re-designs.</li>
 </ul>
 </div>
-<div class="slide content2">
-Marketing and Design Manager  (2013-2015)<br>
+<div class="slide2">
+	Marketing and Design Manager  (2013-2015)<br>
 <ul>
 <li>Design and produce company marketing materials including company collateral, trade show visuals, presentations, etc.</li>
 <li>Develop and maintain several client websites and implement search engine optimization strategies to drive web traffic.</li>
@@ -1291,8 +1272,8 @@ Marketing and Design Manager  (2013-2015)<br>
 <li>Acquired and negotiated several multi-million dollar government contracts</li>
 </ul>
 </div>
-<div class="slide content3">
-Manager  (2005-2013)<br>
+<div class="slide3">
+	Manager  (2005-2013)<br>
 <ul>
 <li>Develop and approve designs for advertisements and product graphics.</li>
 <li>Increased 4th quarter sales by 25% within first four months as manager.</li>
@@ -1304,13 +1285,14 @@ Manager  (2005-2013)<br>
 <li>Work with affiliate company, Ski Travel, to organize, manage, and supervise large scale ski trips.</li>
 </ul>
 </div>
-<div class="slide content4">
+<div class="slide4">
 Bachelor of Science in Business, Concentration in Management  (2007-2011)<br><br>
 <span>Relevant Coursework<br>
 Marketing Research Techniques and Applications, Strategic Management and Advanced Business Models, Negotiations in Organizations, Cross Cultural and Global Management, Diversity in Organizations, Business Information Systems.</span>
 </div>
+</figure>
+</div>
 
-</div> 
 </div>
 				
 				
@@ -1492,6 +1474,50 @@ $window.on('mousemove', function(event){
 });//]]> 
 </script>
 
+<script>
+	
+	// Assigning slide 1 and slide 2 to #ids within the HTML
+	const tab1 = document.getElementById("tab1");
+	const tab2 = document.getElementById("tab2");
+	const tab3 = document.getElementById("tab3");
+	const tab4 = document.getElementById("tab4");
+	const slides = document.getElementById("slides");
+
+
+	function showSlide1() {
+		//check tab1 and Show Slide 1
+		tab1.className = "checked";
+		tab2.className = "btn";
+		tab3.className = "btn";
+		tab4.className = "btn";
+		slides.className = "showslide1"
+	}
+	function showSlide2() {
+		//check tab2 and Show Slide 2
+		tab2.className = "checked";
+		tab1.className = "btn";
+		tab3.className = "btn";
+		tab4.className = "btn";
+		slides.className = "showslide2"
+	}
+	function showSlide3() {
+		//check tab3 and Show Slide 3
+		tab3.className = "checked";
+		tab2.className = "btn";
+		tab1.className = "btn";
+		tab4.className = "btn";
+		slides.className = "showslide3"
+	}
+	function showSlide4() {
+		//check tab4 and Show Slide 4
+		tab4.className = "checked";
+		tab2.className = "btn";
+		tab3.className = "btn";
+		tab1.className = "btn";
+		slides.className = "showslide4"
+	}
+	
+</script>
 
 </body>
 </html>

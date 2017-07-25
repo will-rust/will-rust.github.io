@@ -1,0 +1,335 @@
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta http-equiv="Content-Type" content="text/html;" charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!-- sc_emrtemplate_v1.0 -->
+<title>Will Rust - Application</title>
+
+<!--[if gte mso 9]><xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml><![endif]-->
+
+<style type="text/css">
+body { margin:0 !important; padding: 0 !important; }
+div[style*="margin: 16px 0;"] { margin: 0 !important; }
+a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+.ReadMsgBody, .ExternalClass { width: 100%; background-color: #eeeeee; }
+.ExternalClass, .ExternalClass p, .ExternalClass br, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div, .ExternalClass a { line-height:100%;  }
+table { border-spacing:0; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
+table td { border-collapse:collapse; box-sizing:border-box; }
+.yshortcuts a { border-bottom: none !important; }
+#backgroundTable { margin:0; padding:0; width:100% !important; line-height: 100% !important; }
+.preheader { display:none !important; visibility:hidden; opacity:0; color:transparent; height:0; width:0; }
+.cta:hover {
+ background-color:# !important;
+ }
+.logo:hover {opacity: 1!important;}
+.social:hover{opacity: .5!important;}   
+.cta:hover { opacity: .3!important ; }
+
+ /* Start Custom Fonts */
+/* Just put this code above your 650/600 media query */
+@media screen {
+  @font-face {
+  font-family: 'CrimsonRegular';
+  src: url('https://d22j4fzzszoii2.cloudfront.net/images/fontlibrary/CrimsonRegular.woff') format('woff'),
+  url('https://d22j4fzzszoii2.cloudfront.net/images/fontlibrary/CrimsonRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+  @font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('https://d22j4fzzszoii2.cloudfront.net/images/fontlibrary/Montserrat-Regular.woff') format('woff'),
+  url('https://d22j4fzzszoii2.cloudfront.net/images/fontlibrary/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+}
+/* END Custom Fonts */
+@media screen and (max-device-width: 650px), screen and (max-width: 650px) {
+
+  .fluid {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+.vanish {
+  display: none !important;
+}
+.font14 {
+  font-size: 14px !important;
+  line-height: 20px !important;
+}
+.height-auto {
+  height: auto !important;
+}
+.align-center {
+  text-align: center !important;
+}
+.clearPad {
+  padding: 0px !important;
+}
+.pad-mob {
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+}
+.pad-r20 {
+  padding-right: 10px !important;
+}
+.pad-t20 {
+  padding-top: 20px !important;
+}
+.pad-7080080 {
+  padding: 70px 80px 20px 80px !important;
+}
+.fluidheader{
+	width: 100% !important;
+  max-width: 100% !important;
+  height: 140px !important;
+	background-size: 115% 140px;
+}
+.fluidbody{
+	width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+	background-size: 115% 100%;
+}
+.fluidfooter{
+	width: 100% !important;
+  max-width: 100% !important;
+  height: 150px !important;
+	background-size: 115% 150px;
+}
+
+.btn-container { width: 100% !important;padding: 0px 0px 20px 0px!important;}
+.btn a{ font-size: 14px !important;}
+
+}
+	
+</style>
+</head>
+
+<body bgcolor="#eeeeee" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="margin:0; padding:0;-webkit-text-size-adjust:none; -ms-text-size-adjust:none; font-family:Arial, Helvetica, sans-serif;">
+
+
+<!-- /// START PRE HEADER /// -->
+<span class="preheader" style="width:0; max-height:1px;font-size:1px; line-height:0; mso-margin-top-alt:1px; color:transparent; display:none !important; mso-hide:all; height:0; opacity:0; visibility:hidden;">Will Rust - Application</span>
+<!-- /// END PRE HEADER /// -->
+
+
+<!-- /// START 100% WRAPPER CONTAINER /// -->
+<table width="100%" height="100%" id="backgroundTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width: 100%;">
+  <tr>
+    <td align="center" valign="top" bgcolor="#eeeeee">
+    
+      
+      <!-- /// START 650 CONTAINER /// -->
+      <table width="650" class="fluid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width: 650px;">
+      	<tr>
+      		<td align="center" valign="top" style="padding: 0; margin: 0;">
+            
+          
+            <!-- /// START 600 CONTAINER /// -->
+            <table width="600" class="fluid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width: 600px;">
+              
+              
+              
+                <!-- /// Android Gmail Zoom Fix Start  /// -->
+                <tr class="vanish">
+                <td height="1" style="font-size:1px; line-height:0; min-width:600px; width:600px; height:1px; max-height:1px; mso-margin-top-alt:1px; border: 0; padding: 0; display: block;">&nbsp;</td>
+                </tr>
+                <!-- /// Android Gmail Zoom Fix End /// --> 
+  
+  
+  
+  
+                <!-- /// Web View /// -->
+                <tr>
+                  <td class="vanish" align="center" style="font-family:sans-serif; font-size:10px; mso-line-height-rule:exactly; line-height:15px; color:#ffffff; padding: 10px;">
+                      <a href="[[webview]]" target="_blank" style="text-decoration:none; color: #ffffff;">&nbsp;</a>
+                  </td>
+                </tr>
+                <!-- /// Web View End /// -->
+                
+                
+                
+                
+                <!-- /// ##### Start /// -->
+                <tr>
+                  <td class="fluidheader" background="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/589cc1fb725e25b1e0539644/1486668284257/Header.jpg" bgcolor="#ffffff" width="600" height="140" valign="top" style="background-position: top center; background-repeat: no-repeat;">
+									<!--[if gte mso 9]>
+									<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:140px;">
+										<v:fill type="frame" src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/589cc1fb725e25b1e0539644/1486668284257/Header.jpg" color="#ffffff" />
+										<v:textbox inset="0,0,0,0">
+									<![endif]-->
+
+
+
+									<!--[if gte mso 9]>
+										</v:textbox>
+									</v:rect>
+									<![endif]-->
+								</td>
+                </tr>
+                <tr>
+                  <td class="fluidbody" background="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/589cc1fc37c5811653cec7a5/1486668284950/Mid.jpg" bgcolor="#ffffff" width="600" height="auto" valign="top" align="center" style="background-position: top center;">
+									<!--[if gte mso 9]>
+									<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:745px;">
+										<v:fill type="frame" src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/589cc1fc37c5811653cec7a5/1486668284950/Mid.jpg" color="#ffffff" />
+										<v:textbox inset="0,0,0,0">
+									<![endif]-->
+
+									<table class="fluid" width="600" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:600px;">
+									<tr>
+									<td class="pad-r20" align="center">
+    							<img class="fluid" src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/589cc1fcc534a5719aea9392/1486668284759/Hello1000x1000.png" width="600" alt="HELLO" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; border:none;">
+									</td>
+									</tr>
+									</table>
+									<table class="fluid" width="600" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:600px;">
+									<tr>
+									<td class="pad-7080080"  align="center" style="font-family: 'CrimsonRegular', Times, 'Times New Roman', 'serif';  color:#aaaaaa; font-size:12px; mso-line-height-rule:exactly; line-height:16px; font-weight:normal;padding:70px 120px 20px 120px;">
+									Hello, my name is Will Rust and I'm a multi-disciplinary creative based in Washington DC. Upon reviewing the position outline, I am confident that I would be a seamless fit within your organization and be able to provide significant value to your operations.<br><br>
+
+My skill set is highly diverse and I have extensive experience in a myriad of different disciplines beneficial to the role directly or that may provide ancillary benefit. In my current position I specialize in Web Design and Front End Development but play an integral role in data analytics, marketing, branding, and product development. Outside of my full time job, I also freelance as a designer, photographer, cinematographer, and small business consultant. My path to Design could be considered non-traditional as I graduated from college with a concentration in Business, however my innate understanding of business has elevated my performance as a creative and has become immensely advantageous across all my previous roles.<br><br>
+
+I would love the opportunity to discuss further how my skills and experience may benefit your operations. Please find my resume and portfolio linked below for your reference. Should you have any trouble accessing these resources, please do not hesitate to Email Me.<br><br>
+
+Thank you for your time and consideration!
+									</td>
+									</tr>
+									<tr>
+									<td align="center" style="padding: 40px 0px 0px 0px;">
+									<table class="fluid" width="335" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:335px;">
+									<tr>
+									<td align="center">
+									<table class="fluid" align="left" width="160" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:160px;">
+									<tr>
+									<td align="center" style="padding: 0px 0px 10px 0px">
+									<a class="cta" href="https://will-rust.github.io/" style="transition: .2s ease-in-out;">
+											<img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/589cdb80725e25b1e05576de/1486674816436/CTA_Resume.png" width="160" alt="" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; border:none;">
+									</a>
+									</td>
+									</tr>
+									</table>
+									<!--[if mso]></td><td align="center"><![endif]-->
+									<table class="fluid" align="right" width="160" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:160px;">
+									<tr>
+									<td align="center" style="padding: 0px 0px 10px 0px">
+									<a class="cta" href="http://www.will-rust.com/" style="transition: .2s ease-in-out;">
+											<img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/589cdb802e69cf0dd82cb47d/1486674817658/CTA_Portfolio.png" width="160" alt="" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; border:none;">
+									</a>
+									</td>
+									</tr>
+									</table>
+									</td>
+									</tr>
+									</table>
+
+									</td>
+									</tr>
+									<tr>
+									<td align="center" style="padding: 40px 0px 0px 0px;">
+									<a class="logo" href="http://www.will-rust.com" style="opacity:.7;transition: .2s ease-in-out;">
+    <img src="http://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/t/56dbc02e86db438d71d50107/1485030847819/" width="40" alt="" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; border:none;">
+</a>
+									</td>
+									</tr>
+									</table>
+
+									<!--[if gte mso 9]>
+										</v:textbox>
+									</v:rect>
+									<![endif]-->
+								</td>
+                </tr>
+                <tr>
+                  <td class="fluidfooter" background="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/589cc1fb2e69cf0dd82acd11/1486668284744/Footer.jpg" bgcolor="#333333" width="600" height="150" valign="top" align="center" style="background-position: top center; background-repeat: no-repeat;">
+									<!--[if gte mso 9]>
+									<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:150px;">
+										<v:fill type="frame" src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/589cc1fb2e69cf0dd82acd11/1486668284744/Footer.jpg" color="#333333" />
+										<v:textbox inset="0,0,0,0">
+									<![endif]-->
+<table class="fluid" width="600" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:600px;">
+<tr>
+<td align="center">
+<table width="240" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:240px;">
+									<tr>
+									<td align="center" style="padding: 80px 0px 0px 0px;">
+									<a class="social" href="https://www.instagram.com/will.rust/" style="transition: .2s ease-in-out;">
+											<img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/589cc1fc59cc685485c2b0e6/1486668284448/social_instagram.png" width="40" alt="Instagram" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; border:none;">
+									</a>
+									</td>
+									<td align="center" style="padding: 80px 0px 0px 0px;">
+									<a class="social" href="https://www.linkedin.com/in/rustwilliam/" style="transition: .2s ease-in-out;">
+											<img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/589cc1fc893fc0ec109eb1c9/1486668284971/social_linkedin.png" width="40" alt="LinkedIn" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; border:none;">
+									</a>
+									</td>
+									<td align="center" style="padding: 80px 0px 0px 0px;">
+									<a class="social" href="mailto:w.rust.152@gmail.com" style="transition: .2s ease-in-out;">
+											<img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/589cc1fccd0f6820a5099864/1486668284591/social_mail.png" width="40" alt="Email" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; border:none;">
+									</a>
+									</td>
+									<td align="center" style="padding: 80px 0px 0px 0px;">
+									<a class="social" href="http://www.will-rust.com/" style="transition: .2s ease-in-out;">
+											<img src="https://static1.squarespace.com/static/56907a43a2bab8b5b8da4a85/573cfbd17c65e401e6603150/589cc1fc37c5811653cec7a8/1486668284581/social_portfolio.png" width="40" alt="Portfolio" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; border:none;">
+									</a>
+									</td>
+									</tr>
+									</table>
+</td>
+</tr>
+</table>
+									
+
+									<!--[if gte mso 9]>
+										</v:textbox>
+									</v:rect>
+									<![endif]-->
+								</td>
+                </tr>
+                
+                
+                <!-- /// ##### End /// -->
+                
+                
+                
+                
+                <!-- /// Unsubscribe //// -->
+                <tr>
+                  <td class="footerPad" align="center" style="font-family:sans-serif; font-size:10px;mso-line-height-rule:exactly;line-height:15px;color:#ffffff; padding:20px 10px 30px;">
+                      
+                  </td>
+                </tr>
+                <!-- /// Unsubscribe End /// -->
+                
+              
+              
+             </table>
+             <!-- /// END 600 CONTAINER /// -->
+      
+      
+          </td>
+        </tr>
+      </table>
+	  <!-- /// END 650 CONTAINER /// -->
+
+
+    </td>
+  </tr>
+</table>
+<!-- /// END 100% WRAPPER CONTAINER /// -->
+
+
+
+<!-- /// Gmail App Iphone Width Fix /// -->
+<div style="display:none; white-space:nowrap; font:15px courier; color:transparent;">
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+</div>
+<!-- /// Gmail App Iphone Width Fix End /// -->
+
+
+</body>
+</html>
